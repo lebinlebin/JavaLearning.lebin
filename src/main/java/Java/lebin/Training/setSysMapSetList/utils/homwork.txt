@@ -1,0 +1,73 @@
+
+
+
+一、试写出ArrayList和LinkedList各自的底层结构和区别
+    试写出ArrayList和Vector各自的底层结构和区别
+		   底层结构		版本		线程安全（同步）	增删的效率		改查的效率
+
+	ArrayList: 可变数组		1.2		不安全			较低			较高
+	LinkedList:双向链表		1.2		不安全			较高			较低
+
+	Vector:    可变数组		1.0		安全			较低			较低
+
+
+
+
+
+
+
+
+二、试用集合添加三个元素（元素类型未定），并遍历打印每个元素，要求每个元素前边追加元素的序号，如下所示：
+1	元素1
+2	元素2
+3 	元素3
+
+
+步骤1：创建集合对象
+List list = new ArrayList();
+
+
+步骤2：添加元素
+
+list.add("元素1");
+list.add("元素2");
+list.add("元素3");
+
+步骤3：遍历
+
+
+for(int i=0;i<list.size();i++){
+
+	System.out.println(i+1+"\t"+list.get(i));
+}
+
+
+
+
+
+
+
+
+三、试写出运行结果
+public static void main(String[] args) {
+	List list = new ArrayList();
+	list.add(1);
+	list.add(2);
+	list.add(3);
+	updateList(list);
+	System.out.println(list);1 2
+}
+
+private static void updateList(List list) {
+
+              list.remove(2);
+}
+
+
+
+
+
+四、试写出HashSet和TreeSet都如何去重的
+
+HashSet:通过调用hashCode和equals方法实现去重
+TreeSet：通过比较方法（compareTo或compare）实现去重

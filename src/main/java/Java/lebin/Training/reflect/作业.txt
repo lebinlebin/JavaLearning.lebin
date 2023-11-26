@@ -1,0 +1,12 @@
+1、利用通过反射修改私有成员变量
+	定义PrivateTest类，有私有name属性，并且属性值为hellokitty，只提供name的getName的公有方法
+	创建带有main方法ReflectTest的类，利用Class类得到私有的name属性
+	修改私有的name属性值，并调用getName()的方法打印name属性值
+2、利用反射和File完成以下功能
+	获取File类中的所有方法和构造器
+	利用Class类的forName方法得到File类（）
+	通过newInstance的方法创建File对象，并创建D：\mynew.txt文件 
+
+3、利用反射获取已知Student类实现的接口的泛型（已知类为：课堂案例Student类）
+
+
