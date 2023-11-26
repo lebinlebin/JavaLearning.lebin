@@ -1,0 +1,97 @@
+一、试将一个byte[]写入到指定文件 src/byt.txt中好
+好
+好
+BufferedOutputStream bos =new BufferedOutputStream( new FileOutputStream("src/byt.txt"));好
+好
+bos.write(buf);好
+好
+bos.close();好
+好
+好
+好
+二、试写出文件流体系图好
+好
+InputStream 字节输入流好
+	FileInputStream 文件字节输入流好
+	BufferedInputStream缓冲字节输入流好
+	ObjectInputStream 对象字节输入流（反序列化流）好
+	好
+好
+OutputStream 字节输出流好
+	FileOutputStream 文件字节输出流好
+	BufferedOutputStream 缓冲字节输出流好
+	ObjectOutputStream 对象字节输出流（序列化流）好
+好
+Reader 字符读取流好
+	FileReader文件字符读取流好
+	BufferedReader缓冲字符读取流好
+好
+Writer 字符写出流好
+	FileWriter 文件字符写出流好
+	BufferedWriter 缓冲字符写出流好
+好
+好
+好
+好
+好
+三、试写出如何实现图片的复制好
+好
+方式一：仅仅使用节点流好
+好
+FileInputStream fis = new FileInputStream(源文件);好
+FileOutputStream fos = new FileOutputStream(目标文件);好
+好
+好
+方式二：使用节点流+缓冲流好
+好
+//步骤1：好
+BufferdInputStream bis =new BufferedInputStreawm(new FileInputStream(源文件));好
+BufferedOutputStream bos = new BufferedOutputStreamFile(new FileOutputStream(目标文件));好
+好
+//步骤2：好
+int len;好
+byte[] b = new byte[1024];好
+while((len=bis.read(b))!=-1){好
+好
+	bos.write(b,0,len);好
+}好
+//步骤3：好
+好
+bos.close();好
+bis.close();好
+好
+好
+好
+四、将nums.txt文件中的内容读取出来存到集合，并排序后打印好
+nums.txt的格式如下好
+好
+100好
+89好
+13好
+999好
+32好
+54好
+好
+好
+ArrayList<Integer> list = new ArrayList<>();好
+好
+BufferedReader reader  = new BufferedReader(new FileReader("nums.txt"));好
+好
+好
+String line;好
+好
+while((line=reader.readLine())!=null){好
+好
+	list.add(Integer.parseInt(line));好
+好
+}好
+好
+好
+Collections.sort(list);好
+好
+好
+for(Integer i:list){好
+好
+	System.out.println(i);好
+}好
+完毕

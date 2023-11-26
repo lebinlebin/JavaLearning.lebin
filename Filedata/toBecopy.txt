@@ -1,0 +1,122 @@
+﻿一、试写出以Double类为例，自动装拆箱的语法和手动装拆箱的语法
+一）手动装拆箱
+手动装箱：基本类型——>包装类型
+double d = 1.5;
+方式一：
+Double d2 = new Double(d);
+方式二：
+
+Double d3 = Double.valueOf（d）;
+
+手动拆箱：包装类型——>基本类型
+Double d = new Double(1.5);
+
+double d2 = d.doubleValue();
+
+
+二）自动装拆箱
+自动装箱：基本类型——>包装类型
+double d = 1.5;
+Double d2 = d;
+
+自动拆箱：包装类型——>基本类型
+Double d = new Double(1.5);
+double d3= d2;
+
+
+
+
+
+二、试写出以下运行结果 
+1、已知Animal类有属性name，可以通过有参构造为属性赋值
+String s1="huihui";
+Animal a = new Animal(s1);
+Animal b = new Animal(s1);
+System.out.println(a==b);F
+System.out.println(a.equals(b));F
+System.out.println(a.name==b.name);T
+String s2 = a.toString();
+String s3 = b.toString();
+System.out.println(s2==s3);F
+System.out.println(s2.equals(s3));F
+
+String s4= new String("huihui");
+String s5 = "huihui";
+
+ System.out.println(s1==s4);F
+ System.out.println(s4==s5);F
+String t1 = "hello"+s1;
+String t2 = "hellohuihui";
+System.out.println(t1==t2);F
+System.out.println(t1.intern()==t2);T
+
+三、试写出以下代码的输出结果。
+
+
+1、StringBuffer b = new StringBuffer("aa");  
+  b.append(',');
+   b.append("bb");
+   b.append(null);
+   b.append(10);
+  System.out.println(b);aa,bbnull10
+
+2、StringBuffer s = new StringBuffer("hello");
+
+   String s2 = "hello";
+
+  System.out.println(s==s2);编译报错
+  System.out.println(s.equals(s2));false
+
+四、String和StringBuffer的对比
+相同点：都可以用于保存字符串，而且可以实现对字符串的增加、更新、处理等操作
+
+不同点：
+	String保存字符串常量，里面的值一旦固定，将不能更改。
+	StringBuffer保存字符串变量，里面的值可以更改！
+
+
+
+五、试说出下面语句创建了几个对象？并画出内存图
+
+String s = "abc";
+String s2 = new String("abc");
+String s3="abc".intern();
+
+
+两个对象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
