@@ -7,9 +7,6 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-/**
-
- */
 public class 合并2个有序数组 {
     //和归并排序的思想差不多，归并排序也用到了合并有序数组
     public static int[] merge(int[] arr1, int[] arr2){

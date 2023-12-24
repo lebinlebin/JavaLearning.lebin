@@ -38,7 +38,6 @@ public class _279_完全平方数 {
         }
         //如果不想要寫for-loop填充數組的話，也可以用JAVA內建的Arrays.fill()函數。
         //Arrays.fill(dp, Integer.MAX_VALUE);
-
         //当和为0时，组合的个数为0
         dp[0] = 0;
         // 遍历物品

@@ -27,7 +27,7 @@ import java.util.List;
  */
     //时间复杂度O(n)  该算法的时间复杂度主要取决于两个循环。第一个循环用于填充映射，第二个循环用于找到和为目标值的整数对。因为这两个循环都是线性的，所以总的时间复杂度是O(n) + O(n) = O(2n)。。
     //空间复杂度O(n)
-public class 面试题16_24数对和_两数之和为指定值的整数对 {
+public class _1_两数之和为指定值的所有整数对 {
     public static List<List<Integer>> pairSums(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             return new ArrayList<>();

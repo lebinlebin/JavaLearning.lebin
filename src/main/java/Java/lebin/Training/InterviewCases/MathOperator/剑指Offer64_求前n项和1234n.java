@@ -2,9 +2,9 @@ package Java.lebin.Training.InterviewCases.MathOperator;
 
 /**
  题目描述：
- 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。base^exponent
+ 剑指 Offer 64. 求1+2+…+n
  */
-public class 剑指Offer64_求1_2_n {
+public class 剑指Offer64_求前n项和1234n {
     //递归
     public int sumNums(int n) {
         if(n == 1) return 1;

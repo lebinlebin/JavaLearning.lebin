@@ -54,4 +54,25 @@ public class _54_螺旋矩阵_顺时针螺旋顺序 {
 
         return res;
     }
+
+
+    public int[] spiralOrder2(int[][] matrix) {
+        if (matrix == null) return null;
+        if (matrix.length == 0) return new int[0];
+        int col_begin = 0, col_end = matrix[0].length - 1, row_begin = 0, row_end = matrix.length - 1;
+//        int l = 0, r = array[0].length - 1, t = 0, b = array.length - 1, x = 0;
+        int[] res = new int[(col_end + 1) * (row_end + 1)];
+        int x = 0;
+        while(true) {
+            for(int i = col_begin; i <= col_end; i++) res[x++] = matrix[row_begin][i]; // left to right
+            if(++row_begin > row_end) break;
+            for(int i = row_begin; i <= row_end; i++) res[x++] = matrix[i][col_end]; // top to bottom
+            if(col_begin > --col_end) break;
+            for(int i = col_end; i >= col_begin; i--) res[x++] = matrix[row_end][i]; // right to left
+            if(row_begin > --row_end) break;
+            for(int i = row_end; i >= row_begin; i--) res[x++] = matrix[i][col_begin]; // bottom to top
+            if(++col_begin > col_end) break;
+        }
+        return res;
+    }
 }

@@ -53,12 +53,52 @@ public class _3_无重复字符的最长子串 {
 		return res;
 	}
 
+	public static String lengthOfLongestSubstring2(String s) {
+		//本题两个Map是统一的。只有一个string
+		//当涉及两个string的时候，需要两个Map进行处理，这里只有一个，就只构建一个map就可以
+		if (s == null||s.length() == 0) return "";
+		char[] chars = s.toCharArray();
+		if (chars.length == 0) return "";
+		int left = 0;
+		int right = 0;
+		// 用来保存每一个字符上一次出现的位置
+		Map<Character, Integer> window = new HashMap<>();
+		int res = Integer.MIN_VALUE;
+		String resstr = "";
+		/*
+		思路:
+		滑动窗口(计数窗口)构建:
+		遇到一个字符就把字符放到window里面(hashMap),hashmap的value记录字符出现的次数:count++
+		下一次遇见一个字符，到这个map中去get,如果>1说明窗口内该字符有重复，就要去缩减窗口。
+		缩减窗口是从左边读取元素，然后从hashmap中对应的字符count--；
+		缩减窗口的条件: hashmap中的count>1就进行缩减，直到窗口内的所有字符count==1
+		当窗口的所有字符的count都为1，记录一次最长的不重复字符长度。选择最长的字符
+		 */
+		while(right<s.length()){
+			char c1 = chars[right];
+			window.put(c1,window.getOrDefault(c1,0)+1);
+			right++;
+			//符合条件的进行窗口缩减。  这里符合条件就是当窗口的 当前字符的count > 1
+			while(window.get(c1) > 1 && left < right){
+				char c2 = chars[left];
+				// 移除window中的left字符，直到window.get(c1) ==1
+				window.put(c2,window.get(c2)-1);
+				left++;
+			}
+			int maxlen = right-left;
+			if(maxlen > res){
+				resstr = s.substring(left,right);
+			}
+//			res = Math.max(res,right-left);
+		}
+		return resstr;
+	}
+
 	public static void main(String[] args) {
 		String s = "abcabcbb";
 		System.out.println("==================");
-		lengthOfLongestSubstring(s);
-//		System.out.println();
+		String ss = lengthOfLongestSubstring2(s);
+		System.out.println(ss);
 		System.out.println("==================");
 	}
-
 }

@@ -8,6 +8,7 @@ package Java.lebin.Training.InterviewCases.DFS回溯.回溯二叉树;
  * 叶子节点 是指没有子节点的节点。
  */
 public class _112_路径总和 {
+    //递归
     public boolean traversal(TreeNode root, int targetsum) {
         // 叶子结点
         if (root.left == null && root.right == null && targetsum==0) {

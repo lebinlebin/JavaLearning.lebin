@@ -4,9 +4,6 @@ import Java.lebin.Training.InterviewCases.LinkedList.ListNode;
 
 import java.util.*;
 
-/**
-
- */
 public class 合并K个有序数组 {
     static class Node implements Comparator<Node> {
         public int value;
