@@ -19,9 +19,13 @@ public class _88_合并两个有序数组 {
 		while (i2 >= 0) {
 			//nums2[i2] nums2的最大值   nums1的最大值  那么 把nums1 的最后一个元素放到cur指向的末尾
 			if (i1 >= 0 && nums2[i2] < nums1[i1]) {
-				nums1[cur--] = nums1[i1--];
+				nums1[cur] = nums1[i1];
+				cur--;
+				i1--;
 			} else { // i1 < 0 || nums2[i2] >= nums1[i1]
-				nums1[cur--] = nums2[i2--];
+				nums1[cur] = nums2[i2];
+				cur--;
+				i2--;
 			}
 		}
 	}
@@ -31,6 +35,5 @@ public class _88_合并两个有序数组 {
 		int[] nums2 = new int[]{2,5,6};
 		merge(nums1,nums1.length-3,nums2,nums2.length);
 		System.out.println(Arrays.toString(nums1));
-
 	}
 }

@@ -20,8 +20,7 @@ public class _104_二叉树的最大深度 {
         while (!que.isEmpty())
         {
             int len = que.size();
-            while (len > 0)
-            {
+            while (len > 0) {
                 TreeNode node = que.poll();
                 if (node.left != null)  que.offer(node.left);
                 if (node.right != null) que.offer(node.right);
