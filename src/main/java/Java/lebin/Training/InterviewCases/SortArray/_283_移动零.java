@@ -10,13 +10,13 @@ package Java.lebin.Training.InterviewCases.SortArray;
 //空间复杂度：O(1)。只需要常数的空间存放若干变量。
 public class _283_移动零 {
     public void moveZeroes(int[] nums) {
-        int n = nums.length, left = 0, right = 0;
-        while (right < n) {
-            if (nums[right] != 0) {
-                swap(nums, left, right);
-                left++;
+        int n = nums.length, zeroIndex = 0, noneZeroIndex = 0;
+        while (noneZeroIndex < n) {//找到第一个为0的index
+            if (nums[noneZeroIndex] != 0) {//right在不断地找非零元素，left一直标记左边第一个0的元素
+                swap(nums, zeroIndex, noneZeroIndex);
+                zeroIndex++;//找为0的index
             }
-            right++;
+            noneZeroIndex++;//找不为0的index
         }
     }
 

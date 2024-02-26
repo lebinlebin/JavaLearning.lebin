@@ -13,7 +13,6 @@ import static java.lang.Math.max;
 输入：nums = [100,4,200,1,3,2]
 输出：4
 数字连续!!!!
-数字连续!!!!
  */
 public class _128_最长连续序列_数字连续 {
 /*
@@ -42,6 +41,7 @@ public class _128_最长连续序列_数字连续 {
         for (int i = 0; i < len; i++) {
             dp[i]=1;
         }
+        //只要处理两种情况，序列连续两个数值是增加的和序列连续两个数值是相等的两种情况，不等的默认就是1了
         for (int i = 1; i < len; i++) {
             if(nums[i] == nums[i-1] + 1) {
                 dp[i] = dp[i-1] +1;

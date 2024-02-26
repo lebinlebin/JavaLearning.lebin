@@ -1,0 +1,28 @@
+ArrayList是什么?
+前言
+一、ArrayList是什么？
+二、ArrayList的基本操作
+1.创建一个ArrayList的对象
+2.基本操作
+(1)添加元素
+1.add(Object element)
+2.add(int index,Object element)
+3.addAll(int index,Collection c)
+(2)删除元素
+1.remove(int index)
+2.remove(Object element)
+3.removeAll()
+4.clear()
+(3)查找元素
+1.get(int index)
+2.contains(Object element)
+3.indexOf(Object element)
+4.lastIndexOf(Object element)
+(4)修改元素
+1.set(int index,Object element)
+(5)遍历集合
+1.for循环
+2.加强for循环（for each）(推荐)
+(6)集合的其它操作
+总结
+-------------------------------------------
