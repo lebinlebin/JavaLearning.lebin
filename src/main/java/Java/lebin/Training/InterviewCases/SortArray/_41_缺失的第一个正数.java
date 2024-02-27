@@ -11,23 +11,44 @@ package Java.lebin.Training.InterviewCases.SortArray;
 示例 3：
 输入：nums = [7,8,9,11,12]
 输出：1
-
+ */
+//数组中出现 负数(<=0)或者（>=n+1）的数，那么1~n中就必定会有数字缺失，n是数组的长度。
+//缺失的正数一定是在 [1,n+1]区间内。
+/*
+这道题，首先会想到哈希表
+我们可以将数组所有的数放入哈希表，随后从 1 开始依次枚举正整数，并判断其是否在哈希表中。
  */
 public class _41_缺失的第一个正数 {
-    public int firstMissingPositive(int[] nums) {
+    /*
+解题方法
+首先，将所有小于等于 0 的数替换为一个大于数组长度的数（例如 n + 1，其中 n 是数组长度）。这样做是为了确保所有负数和零不会影响我们找到缺失的最小正数。
+然后，遍历数组：
+对于每个数 nums[i]，如果 nums[i] 在 1 到 n 的范围内（现在数组中不会有负数或零），我们将数组中的第 nums[i] - 1 个元素标记为负数，以表示 nums[i] 这个正数在数组中出现过。
+再次遍历数组：
+检查第一个正数的索引。如果所有的数都是负的，说明数组包含了 1 到 n 的所有数，因此未出现的最小正数为 n + 1；否则，第一个正数所在位置的索引加 1 就是未出现的最小正数。
+复杂度
+时间复杂度： O(n)。数组被遍历了几次，但每次遍历的复杂度都是 O(n)。
+空间复杂度： O(1)。没有使用额外的空间，只在原数组上操作。
+     */
+    public int firstMissingPositive_hash(int[] nums) {
         int n = nums.length;
         for (int i = 0; i < n; ++i) {
-            while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
-                int temp = nums[nums[i] - 1];
-                nums[nums[i] - 1] = nums[i];
-                nums[i] = temp;
+            if (nums[i] <= 0) {
+                nums[i] = n + 1;
             }
         }
         for (int i = 0; i < n; ++i) {
-            if (nums[i] != i + 1) {
+            int num = Math.abs(nums[i]);
+            if (num <= n) {
+                nums[num - 1] = -Math.abs(nums[num - 1]);
+            }
+        }
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] > 0) {
                 return i + 1;
             }
         }
         return n + 1;
     }
+
 }

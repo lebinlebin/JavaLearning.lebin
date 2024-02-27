@@ -36,7 +36,7 @@ public class _977_有序数组的平方 {
         }
         return result;
     }
-    //时间复杂度：O(nlogn)，其中 nnn 是数组 nums 的长度。
+    //时间复杂度：O(nlogn)，其中 n 是数组 nums 的长度。
     //空间复杂度：O(logn)。除了存储答案的数组以外，我们需要 O(logn) 的栈空间进行排序。
     public int[] sortedSquares2(int[] nums) {
         int[] ans = new int[nums.length];

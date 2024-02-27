@@ -13,7 +13,6 @@ import java.util.Stack;
 //空间复杂度：O(n)
 //将两个nums数组拼接在一起，使用单调栈计算出每一个元素的下一个最大值，最后再把结果集即result数组resize到原数组大小就可以了。
 public class _503_下一个更大元素2_单调栈 {
-	//nums1是nums2的子集
 	public int[] nextGreaterElements(int[] nums) {
 		//边界判断
 		if(nums == null || nums.length <= 1) {
@@ -25,9 +24,9 @@ public class _503_下一个更大元素2_单调栈 {
 
 		Stack<Integer> st= new Stack<>();//栈中存放的是nums中的元素下标
 		for(int i = 0; i < 2*size; i++) {
-			while(!st.empty() && nums[i % size] > nums[st.peek()]) {
-				result[st.peek()] = nums[i % size];//更新result
-				st.pop();//弹出栈顶
+			while(!st.empty() && nums[i % size] > nums[st.peek()]) {//栈中存储的是从栈底(大)道栈顶(小)的nums[i]之前的右边比其大的元素列表
+				result[st.peek()] = nums[i % size];//更新result，第一个比nums[i]大的元素，跟新到对应的下标上
+				st.pop();//弹出栈顶  循环一直找到第一个比nums[i]大的元素
 			}
 			st.push(i % size);
 		}

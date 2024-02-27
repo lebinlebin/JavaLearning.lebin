@@ -30,7 +30,6 @@ public class _560_和为K的子数组_前缀和 {
                 if(sum[i]-sum[j]==k){
                     ans++;
                 }
-
             }
         }
         return ans;

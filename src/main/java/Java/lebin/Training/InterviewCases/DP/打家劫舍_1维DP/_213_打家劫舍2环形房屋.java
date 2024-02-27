@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.打家劫舍;
+package Java.lebin.Training.InterviewCases.DP.打家劫舍_1维DP;
 
 /**
  * 213. 打家劫舍 II
@@ -7,7 +7,7 @@ package Java.lebin.Training.InterviewCases.DP.打家劫舍;
  * 给定一个代表每个房屋存放金额的非负整数数组，计算你 在不触动警报装置的情况下 ，能够偷窃到的最高金额。
  */
 //与打家劫舍1的区别:所有的房屋都 围成一圈 ； 规则还是相邻的房间不能偷
-public class _213_打家劫舍2 {
+public class _213_打家劫舍2环形房屋 {
 	/*
     1. dp定义
         dp[i]：考虑下标i（包括i）以内的房屋，最多可以偷窃的金额为dp[i]。
@@ -23,23 +23,26 @@ public class _213_打家劫舍2 {
         从前到后遍历
      */
 	//搜索两次，第一次不加尾，第二次不加头，取最大即可。
+//	分两种情况进行讨论：
+//	不偷第一个房屋——考虑偷[1...nums.length-1]
+//	不偷最后一个房屋——考虑偷[0...nums.length-2]
+//这样问题就转化为了198问题了，两种情况中取结果值大的进行返回即可。
 	public int rob(int[] nums) {
 		if (nums.length == 1) return nums[0];
 		if (nums.length == 2) return Math.max(nums[0], nums[1]);
-		int n = nums.length - 1;
-		int[] dp1 = new int[n];
-		dp1[0] = nums[0];
-		dp1[1] = Math.max(nums[0], nums[1]);
-		for (int i = 2; i < n; i++) {
-			dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + nums[i]);
-		}
+		int result1 = robRange(nums,0,nums.length-2);
+		int result2 = robRange(nums,1,nums.length-1);
+		return Math.max(result1,result2);
+	}
 
-		int[] dp2 = new int[n];
-		dp2[0] = nums[n];
-		dp2[1] = Math.max(nums[n], nums[n - 1]);
-		for (int i = 2; i < n; i++) {
-			dp2[i] = Math.max(dp2[i - 1], dp2[i - 2] + nums[n - i]);
+	public int robRange(int[] nums,int start,int end){
+		if(end == start) return nums[start];
+		int[] dp = new int[nums.length];
+		dp[start] = nums[start];
+		dp[start+1] = Math.max(nums[start],nums[start+1]);
+		for(int i = start+2;i<=end;i++){
+			dp[i] = Math.max(dp[i-2]+nums[i],dp[i-1]);
 		}
-		return Math.max(dp1[n - 1], dp2[n - 1]);
+		return dp[end];
 	}
 }

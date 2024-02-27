@@ -14,11 +14,10 @@ public class _15_三数之和 {
         if (nums == null) return null;
         List<List<Integer>> res = new ArrayList<>();
         if (nums.length < 3) return res;
-
         // 排序
         Arrays.sort(nums);
         // i用来扫描三元组的第一个元素
-        int lastIdx = nums.length - 3;
+        int lastIdx = nums.length - 3;//要找三个数，要找除了nums[i]外的三个数，所以至少右边还有两个数
         int lastR = nums.length - 1;
         for (int i = 0; i <= lastIdx; i++) {
             // 去重

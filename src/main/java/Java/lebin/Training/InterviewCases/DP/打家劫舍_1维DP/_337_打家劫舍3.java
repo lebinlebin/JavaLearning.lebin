@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.打家劫舍;
+package Java.lebin.Training.InterviewCases.DP.打家劫舍_1维DP;
 
 import Java.lebin.Training.InterviewCases.BinarySearchTree.TreeNode;
 
@@ -7,7 +7,9 @@ import java.util.Map;
 
 /**
  * 337. 打家劫舍 III
- * 在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
+ * 在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。
+ * 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。
+ * 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
  * 计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。
  */
 //简化一下这个问题：一棵二叉树，树上的每个点都有对应的权值，每个点有两种状态（选中和不选中），
@@ -55,47 +57,6 @@ public class _337_打家劫舍3 {
 		int[] right = robTree(root.right);
 		res[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
 		res[1] = root.val + left[0] + right[0];
-		return res;
-	}
-
-
-
-
-	// 1.递归去偷，超时
-	public int rob(TreeNode root) {
-		if (root == null)
-			return 0;
-		int money = root.val;
-		if (root.left != null) {
-			money += rob(root.left.left) + rob(root.left.right);
-		}
-		if (root.right != null) {
-			money += rob(root.right.left) + rob(root.right.right);
-		}
-		return Math.max(money, rob(root.left) + rob(root.right));
-	}
-
-	// 2.递归去偷，记录状态
-	// 执行用时：3 ms , 在所有 Java 提交中击败了 56.24% 的用户
-	public int rob1(TreeNode root) {
-		Map<TreeNode, Integer> memo = new HashMap<>();
-		return robAction(root, memo);
-	}
-
-	int robAction(TreeNode root, Map<TreeNode, Integer> memo) {
-		if (root == null)
-			return 0;
-		if (memo.containsKey(root))
-			return memo.get(root);
-		int money = root.val;
-		if (root.left != null) {
-			money += robAction(root.left.left, memo) + robAction(root.left.right, memo);
-		}
-		if (root.right != null) {
-			money += robAction(root.right.left, memo) + robAction(root.right.right, memo);
-		}
-		int res = Math.max(money, robAction(root.left, memo) + robAction(root.right, memo));
-		memo.put(root, res);
 		return res;
 	}
 }
