@@ -17,6 +17,7 @@ public	class _206_反转链表 {
 		while (cur != null) {
 			temp = cur.next;// 保存下一个节点，因为接下来要改变 cur->next的指向了
 			cur.next = prev;
+			// 更新pre 和 cur指针
 			prev = cur;
 			cur = temp;
 		}

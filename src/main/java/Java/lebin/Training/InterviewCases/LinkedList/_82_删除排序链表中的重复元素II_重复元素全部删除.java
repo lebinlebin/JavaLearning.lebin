@@ -22,8 +22,8 @@ public class _82_删除排序链表中的重复元素II_重复元素全部删除
 		ListNode cur = dummy;
 		while (cur.next != null && cur.next.next != null) {
 			if (cur.next.val == cur.next.next.val) {
-				int x = cur.next.val;
-				while (cur.next != null && cur.next.val == x) {
+				int x = cur.next.val;//这里是为了保存一个x，while循环中cur会变化，就不能拿到这个值
+				while (cur.next != null && cur.next.val == x) {//当前重复值连续删除；后边还有其他重复数据。靠外循环while循环进行后续循环
 					cur.next = cur.next.next;
 				}
 			} else {

@@ -48,20 +48,9 @@ public class _0234_回文链表_中间节点_链表反转 {
 	private ListNode middleNode(ListNode head) {
 		ListNode fast = head;
 		ListNode slow = head;
-
 		while (fast.next != null && fast.next.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
-		}
-		return slow;
-	}
-
-
-	private ListNode middleNode2(ListNode head){
-		ListNode fast = head, slow = head;
-		while(fast!=null || fast.next !=null){
-			fast = fast.next.next;
-			slow = slow.next;
 		}
 		return slow;
 	}
@@ -72,14 +61,15 @@ public class _0234_回文链表_中间节点_链表反转 {
 	 * @return 翻转之后链表的头结点
 	 */
 	private ListNode reverseList(ListNode head) {
-		ListNode newHead = null;
-		while (head != null) {
-			ListNode tmp = head.next;
-			head.next = newHead;
-			newHead = head;
-			head = tmp;
+		ListNode pre = null;
+		ListNode cur = head;
+		while (cur != null) {
+			ListNode tmp = cur.next;
+			cur.next = pre;
+			pre = cur;
+			cur = tmp;
 		}
-		return newHead;
+		return pre;
 	}
 
 
