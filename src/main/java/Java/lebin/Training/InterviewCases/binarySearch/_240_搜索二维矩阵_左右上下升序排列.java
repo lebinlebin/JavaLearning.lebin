@@ -20,7 +20,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  * 因此这种搜索方式将始终在矩阵中找到目标（如果存在）。
  *
  */
-public class _240_搜索二维矩阵_左下角开始遍历 {
+public class _240_搜索二维矩阵_左右上下升序排列 {
 	public boolean searchMatrix(int[][] matrix, int target) {
 		int row = matrix.length-1;
 		int col = 0;
