@@ -28,7 +28,7 @@ public class _78_子集 {
         for (int i = startIndex; i < nums.length; i++){
             path.add(nums[i]);
             backtracking(nums, i + 1);
-            path.remove(path.size()-1);
+            path.remove(path.size()-1);//回溯
         }
     }
 }

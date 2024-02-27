@@ -5,7 +5,6 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 完全平方数 是一个可以写成某个整数的平方的整数。换句话说，它可以写成某个整数和自身的乘积。
 不能使用任何内置的库函数，如  sqrt 。
 
-
 示例 1：
 输入：num = 16
 输出：true
