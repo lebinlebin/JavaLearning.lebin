@@ -2,12 +2,9 @@ package Java.lebin.Training.InterviewCases.SortArray;
 
 import Java.lebin.Training.InterviewCases.LinkedList.ListNode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
-public class 合并2个有序数组 {
+public class 合并k个有序数组byMergeTwo {
     //和归并排序的思想差不多，归并排序也用到了合并有序数组
     public static int[] merge(int[] arr1, int[] arr2){
         int length1 = arr1.length;
@@ -42,7 +39,18 @@ public class 合并2个有序数组 {
 
         return arr;
     }
-
+    //最大长度 k x n
+/*
+时间复杂度：
+假设每个数组的最长长度是 n。
+在第一次合并，两个n长度的数组合并，ans 的长度为 2n；
+第二次合并，ans 的长度为 2×n，和长度维n的数组合并。
+第 i 次合并，ans 的长度为 i×n 和长度维n的数组合并。
+第 i 次合并的时间代价是 O(i×n)，那么总的时间代价为 2n + 3n + ... + in
+一共合并k-1次   --> O(∑i=1,k (i×n))=O( ((1+k)⋅k)×n/2)=O(k^2*n)，
+故渐进时间复杂度为O(k^2*n)。
+空间复杂度：没有用到与 k 和 n 规模相关的辅助空间，空间复杂度为 O(1)。
+ */
     public static  int[] mergekSortedArrays(int[][] arrays) {
         int[] ans = new int[] {};
         for (int i = 0; i < arrays.length; ++i) {

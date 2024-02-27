@@ -23,19 +23,19 @@ public class _23_合并K个升序链表 {
 	 思路
 	 维护当前每个链表没有被合并的元素的最前面一个，
 	 k 个链表就最多有 k 个满足这样条件的元素，
-	 每次在这些元素里面选取 val 属性最小的元素合并到答案中。
-	 选取最小元素时，用优先队列
+	 每次在这些元素里面选取 val 属性最小的元素合并到答案中。选取最小元素时，用优先队列
 	 复杂度分析
 	 时间复杂度：考虑优先队列中的元素不超过 k 个，那么插入和删除的时间代价为 O(logk)，这里最多有 kn 个点，
 	 对于每个点都被插入删除各一次，故总的时间代价即渐进时间复杂度为 O(kn×logk)。
 	 空间复杂度：这里用了优先队列，优先队列中的元素不超过 k个，故渐进空间复杂度为 O(k)。
 	 */
 	public static ListNode mergeKLists(ListNode[] lists) {
+		//因为是链表，所以这里lists中其实就存了k个list的head，每个list后续的数据通过head读取。
 		if(null == lists || lists.length == 0){
 			return null;
 		}
-		ListNode dump = new ListNode(-1);
-		ListNode p = dump;
+		ListNode dumy = new ListNode(-1);
+		ListNode p = dumy;
 		//构建小根堆，
 		PriorityQueue<ListNode> queue =  new PriorityQueue<>((o1,o2)->(o1.val - o2.val));
 		//先把头节点加入到小根堆中
@@ -54,7 +54,7 @@ public class _23_合并K个升序链表 {
 			//指针不断移动。
 			p = p.next;
 		}
-		return dump.next;
+		return dumy.next;
 	}
 
 
@@ -96,7 +96,8 @@ public class _23_合并K个升序链表 {
 		return head.next;
 	}
 
-	//=============================================================================
+
+	//================以下 for test ========================
 	//尾插法
 	public  static  ListNode createList(int[] element){
 		if(element==null){

@@ -1,7 +1,6 @@
 package Java.lebin.Training.InterviewCases.LinkedList;
 
 /**
- * https://leetcode-cn.com/problems/remove-linked-list-elements/
  * 19. 删除链表的倒数第 N 个结点
  * 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
  *
@@ -9,7 +8,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
 public class _19_删除链表的倒数第N个结点 {
 	/**
 	 * 虚拟头结点技巧
-	 * 时间复杂度：O(L)，其中 LLL 是链表的长度。
+	 * 时间复杂度：O(L)，其中 L是链表的长度。
 	 * 空间复杂度：O(1)。
 	 */
 	public ListNode removeNthFromEnd(ListNode head, int n) {

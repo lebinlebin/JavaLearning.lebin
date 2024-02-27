@@ -13,18 +13,19 @@ public class _21_合并两个有序链表 {
 	空间复杂度 O(1)： 节点引用 newhead , tail 使用常数大小的额外空间。
 	 */
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-		ListNode newhead = new ListNode(-1);
-		ListNode tail = newhead;
+		ListNode newhead = new ListNode(-1);//固定不动指向头结点
+		ListNode tail = newhead;//需要一直指向完成排序之后的最后一个节点
 		while (l1 != null && l2 != null) {
 			if (l1.val <= l2.val) {
 				tail.next = l1;
-				tail = l1;
+//				tail = tail.next;
 				l1 = l1.next;
 			} else {
 				tail.next = l2;
-				tail = l2;
+//				tail = tail.next;
 				l2 = l2.next;
 			}
+			tail = tail.next;
 		}
 
 		// 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
@@ -32,7 +33,9 @@ public class _21_合并两个有序链表 {
 		return newhead.next;
 	}
 
-	//递归解法
+
+
+//递归解法，不推荐
 //	时间复杂度：O(n+m)
 //空间复杂度：O(n+m)，其中 n和 m 分别为两个链表的长度
 //递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。

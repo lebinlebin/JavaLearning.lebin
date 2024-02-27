@@ -1,14 +1,12 @@
-package Java.lebin.Training.InterviewCases.SortArray;
-
-import Java.lebin.Training.InterviewCases.LinkedList.ListNode;
+package Java.lebin.Training.InterviewCases.LinkedList;
 
 import java.util.*;
 
-public class 合并K个有序数组 {
+public class 合并K个有序数组byPriorityQueue {
     static class Node implements Comparator<Node> {
-        public int value;
-        public int arrayIdx;
-        public int idx;
+        public int value;//取值大小
+        public int arrayIdx;//在哪个数组中
+        public int idx;//在该数组中的哪个位置
 
         public Node() {}
         //value权值大小，arraysIdx在哪个数组里，idx在该数组的哪个位置> >
@@ -31,19 +29,19 @@ public class 合并K个有序数组 {
             return o1.value - o2.value;
         }
     };
-
-    /**
-     * @param arrays: k sorted integer arrays
-     * @return: a sorted array
+    /*
+     复杂度分析
+	 时间复杂度：考虑优先队列中的元素不超过 k 个，那么插入和删除的时间代价为 O(logk)，这里最多有 kn 个点，
+	 对于每个点都被插入删除各一次，故总的时间代价即渐进时间复杂度为 O(kn×logk)。
+	 空间复杂度：这里用了优先队列，优先队列中的元素不超过 k个，故渐进空间复杂度为 O(k)。
      */
     public static  int[] mergekSortedArrays(int[][] arrays) {
-
         // 初始化 优先队列 ，优先队列的一个元素包括三个值 ：数字大小，数字在哪个数组里，数字在数组的哪个位置
         PriorityQueue<Node> q = new PriorityQueue<Node>(arrays.length, cNode);
         // 初始化 答案
         List<Integer> ans = new ArrayList<>();
 
-        for(int i = 0; i < arrays.length; i++) {
+        for(int i = 0; i < arrays.length; i++) {//先把k个数组的第一个元素压入优先级队列
             // 如果这个数组为空 则不用压入
             if(arrays[i].length == 0) {
                 continue;
@@ -51,6 +49,7 @@ public class 合并K个有序数组 {
             // arrays[i][0] 权值大小  i 在第i个数组   0 在该数组的0位置
             q.add(new Node(arrays[i][0], i, 0));
         }
+
         while(!q.isEmpty()) {
             // 取出队列中最小值
             Node point = q.poll();
