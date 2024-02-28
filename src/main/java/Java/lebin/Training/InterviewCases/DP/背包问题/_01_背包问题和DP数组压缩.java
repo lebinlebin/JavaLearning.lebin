@@ -27,19 +27,19 @@ public class _01_背包问题和DP数组压缩 {
     /**
      * @param weight  物品的重量
      * @param value   物品的价值
-     * @param bagSize 背包的容量
+     * @param bagWeight 背包的容量
      */
-    public static void testWeightBagProblem(int[] weight, int[] value, int bagSize){
-        int goods = weight.length;  // 获取物品的数量
-        int[][] dp = new int[goods][bagSize + 1];//dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少。
+    public static int testWeightBagProblem(int[] weight, int[] value, int bagWeight){
+        int wLen = weight.length;  // 获取物品的数量
+        int[][] dp = new int[wLen][bagWeight + 1];//dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少。
 
         // 创建数组后，其中默认的值就是0
-        for (int j = weight[0]; j <= bagSize; j++) {
+        for (int j = weight[0]; j <= bagWeight; j++) {
             dp[0][j] = value[0];//j <= bagSize时候价值就是value[0]，j超过bagSize  价值为0
         }
 
         for (int i = 1; i < weight.length; i++) {
-            for (int j = 1; j <= bagSize; j++) {
+            for (int j = 1; j <= bagWeight; j++) {
                 if (j < weight[i]) {
                     //当前背包的容量 < 当前物品i，不放物品i
                     //那么前i-1个物品能放下的最大价值就是当前情况的最大价值
@@ -53,18 +53,19 @@ public class _01_背包问题和DP数组压缩 {
         }
 
         // 打印dp数组
-        for (int i = 0; i < goods; i++) {
-            for (int j = 0; j <= bagSize; j++) {
+        for (int i = 0; i < wLen; i++) {
+            for (int j = 0; j <= bagWeight; j++) {
                 System.out.print(dp[i][j] + "\t");
             }
             System.out.println("\n");
         }
+        return dp[weight.length-1][bagWeight];
     }
 
 
     //01背包理论基础（滚动数组）压缩dp数组到1维
     //说明状态是可以压缩的
-    public static void testWeightBagProblem1D(int[] weight, int[] value, int bagWeight){
+    public static int  testWeightBagProblem1D(int[] weight, int[] value, int bagWeight){
         int wLen = weight.length;
         //定义dp数组：dp[j]表示背包容量为j时，能获得的最大价值
         int[] dp = new int[bagWeight + 1];
@@ -78,12 +79,14 @@ public class _01_背包问题和DP数组压缩 {
         for (int j = 0; j <= bagWeight; j++){
             System.out.print(dp[j] + " ");
         }
+        return dp[bagWeight];
     }
 
     public static void main(String[] args) {
         int[] weight = {1,3,4};
         int[] value = {15,20,30};
         int bagSize = 4;
-        testWeightBagProblem1D(weight,value,bagSize);
+        int result = testWeightBagProblem1D(weight,value,bagSize);
+        System.out.println(result);
     }
 }
