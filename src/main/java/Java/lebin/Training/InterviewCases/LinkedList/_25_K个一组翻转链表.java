@@ -40,6 +40,7 @@ public class _25_K个一组翻转链表 {
 				next.next = prev.next;//curr
 				prev.next = next;
 			}
+
 			prev = curr;
 		}
 	}
