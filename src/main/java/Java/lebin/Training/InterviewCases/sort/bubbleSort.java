@@ -10,6 +10,7 @@ public class bubbleSort {
             boolean changed = false;
             for(int start = 0; start < end; start++){
                 if(arr[start] > arr[start+1]){//第一遍选出最大的，放到最后边，那么下一轮循环就是循环length-1轮
+                    //两两交换
                     int t = arr[start+1];
                     arr[start+1] = arr[start];
                     arr[start]=t;
@@ -20,7 +21,6 @@ public class bubbleSort {
             if(changed == false) return;
         }
     }
-
     public static void main(String[] args) {
         int[] arr = new int[]{1,3,2,4,5,6,8};
         System.out.println(Arrays.toString(arr));
