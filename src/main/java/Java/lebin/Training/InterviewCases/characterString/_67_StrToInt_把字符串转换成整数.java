@@ -7,7 +7,7 @@ package Java.lebin.Training.InterviewCases.characterString;
  输入: "42"
  输出: 42
   */
-public class 剑指Offer67_把字符串转换成整数 {
+public class _67_StrToInt_把字符串转换成整数 {
     /*
     复杂度分析：
     时间复杂度 O(N) ： 其中 N 为字符串长度，线性遍历字符串占用 O(N) 时间。
