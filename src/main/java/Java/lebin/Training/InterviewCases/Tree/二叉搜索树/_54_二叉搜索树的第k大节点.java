@@ -7,7 +7,7 @@ import java.util.List;
  剑指 Offer 54. 二叉搜索树的第k大节点
  给定一棵二叉搜索树，请找出其中第k大的节点。
  */
-public class _剑指Offer54_二叉搜索树的第k大节点 {
+public class _54_二叉搜索树的第k大节点 {
 
     private static List<Integer> arr=new ArrayList<>();
     public int kthLargest(TreeNode root, int k) {

@@ -35,7 +35,7 @@ import java.util.Queue;
  *
  */
 //二叉树层序遍历用队列; 前序中序后序遍历用堆栈
-public class _剑指Offer26_树的子结构 {
+public class _26_树的子结构 {
     public boolean isSubStructure(TreeNode A, TreeNode B) {
         return (A != null && B != null) && (recur(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B));
     }

@@ -21,6 +21,7 @@ public class MergeSort {
 		sort(mid, end, array);
 		merge(begin, mid, end, array);//一开始只有两个数进行merge
 	}
+
 	/**
 	 * 将 [begin, mid) 和 [mid, end) 范围的序列合并成一个有序序列
 	 */
@@ -32,20 +33,21 @@ public class MergeSort {
 		int re = end;//右边截止位置
 		//mid放在右边；左闭右开
 
-		int ai = begin;
+		int ai = begin;//直接复写到原来的array数组里面
 		int[] leftArray = new int[array.length>>1];//左边部分
 
-		// 备份左边数组
+		// 备份左边数组  两个数组做合并
 		for (int i = li; i < le; i++) {
 			leftArray[i] = array[begin + i];
 		}
 
 		// 如果左边还没有结束
 		while (li < le) {
+			//遍历两个数组
 			if (ri < re && (array[ri] < leftArray[li])) {
-				array[ai++] = array[ri++];
+				array[ai++] = array[ri++];//小的往前排
 			} else {
-				array[ai++] = leftArray[li++];
+				array[ai++] = leftArray[li++];//小的往前排
 			}
 		}
 

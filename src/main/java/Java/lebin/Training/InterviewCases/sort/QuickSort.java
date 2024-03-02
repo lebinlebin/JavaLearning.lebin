@@ -31,9 +31,9 @@ public class QuickSort {
 		// end指向最后一个元素。我们的元素都是左闭右开的。所以先把end--,才能进行接下来的工作
 		end--;
 
-		while (begin < end) {
+		while (begin < end) {//大循环套小循环
 			// 从右向左
-			while (begin < end) {
+			while (begin < end) {//从左到右，从小到大
 				if (pivot < array[end]) { // 右边元素 > 轴点元素
 					end--;
 				} else { // 右边元素 <= 轴点元素 交换并且begin++
@@ -52,6 +52,7 @@ public class QuickSort {
 					break;
 				}
 			}
+
 		}
 		//返回轴点元素的位置index
 		// 将轴点元素放入最终的位置

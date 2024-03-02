@@ -26,6 +26,7 @@ public class _209_长度最小的子数组 {
 		return result == Integer.MAX_VALUE ? 0 : result;
 	}
 
+
 	//这道题目暴力解法当然是 两个for循环，然后不断的寻找符合条件的子序列，时间复杂度很明显是O(n^2)。
 	// 时间复杂度O(n^2)。
 	public static int minSubArrayLen2(int s, int[] nums) {

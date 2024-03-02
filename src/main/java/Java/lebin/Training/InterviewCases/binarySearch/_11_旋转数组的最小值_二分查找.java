@@ -6,7 +6,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  * 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
  * 例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。
  */
-class _11_剑指offer旋转数组的最小值_二分查找 {
+class _11_旋转数组的最小值_二分查找 {
 	public static int minArray(int[] array) {
 		int left = 0;
 		int right = array.length-1;

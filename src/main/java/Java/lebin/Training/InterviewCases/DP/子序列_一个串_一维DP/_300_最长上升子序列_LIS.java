@@ -40,7 +40,7 @@ public class _300_最长上升子序列_LIS {
 			for (int j = 0; j < i; j++) {
 				if (nums[i] <= nums[j]) continue;//没法接在后边
 				//nums[i] > nums[j] 那么包含当前遍历元素nums[i]在内，可以组成一个新的递增序列，长度是dp[j] + 1
-				dp[i] = Math.max(dp[i], dp[j] + 1);//可以接在后边组成新的lcs
+				dp[i] = Math.max(dp[i], dp[j] + 1);//可以接在后边组成新的lis
 			}
 			//把最大值记录下来
 			max = Math.max(dp[i], max);
