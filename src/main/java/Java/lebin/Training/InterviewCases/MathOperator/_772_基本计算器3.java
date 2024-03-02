@@ -21,6 +21,8 @@ import java.util.Stack;
 输出：21
 
  */
+//时间复杂度：O(n),n为字符串的长度。
+//空间复杂度：O(n),使用的栈空间是压入的数字
 public class _772_基本计算器3 {
     //递归的开始条件和结束条件是什么？遇到 ( 开始递归，遇到 ) 结束递归：
     public int calculate(String s) {

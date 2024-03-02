@@ -3,7 +3,6 @@ package Java.lebin.Training.InterviewCases.Tree;
 import Java.lebin.Training.InterviewCases.BinarySearchTree.TreeNode;
 
 /**
- * https://leetcode-cn.com/problems/largest-bst-subtree/
  *  * 输入：root = [10,5,15,1,8,null,7]
  *  * 输出：3
  *  * 解释：本例中最大的 BST 子树是高亮显示的子树。返回值是子树的大小，即 3 。
