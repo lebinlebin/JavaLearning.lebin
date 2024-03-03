@@ -62,10 +62,9 @@ public class _378_有序矩阵中第K小的元素 {
     /*
     矩阵内的元素是从左上到右下递增的
     二维数组中 matrix[0][0] 为最小值，matrix[n−1][n−1]为最大值，现在我们将其分别记作 l 和 r。
-
      */
     //时间复杂度：O(nlog(r−l))，二分查找进行次数为 O(log(r−l))，每次操作时间复杂度为 O(n)。
-    //空间复杂度：O(1)O(1)O(1)。
+    //空间复杂度：O(1)。
     public int kthSmallest3(int[][] matrix, int k) {
         int n = matrix.length;
         int left = matrix[0][0];
