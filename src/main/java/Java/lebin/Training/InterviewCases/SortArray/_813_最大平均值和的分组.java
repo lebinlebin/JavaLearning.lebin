@@ -14,6 +14,8 @@ nums 的最优分组是[9], [1, 2, 3], [9]. 得到的分数是 9 + (1 + 2 + 3) /
 输入: nums = [1,2,3,4,5,6,7], k = 4
 输出: 20.50000
  */
+//时间复杂度：O(k×n^2)，其中 k 是分组的最大子数组数目，n 是数组 nums 的长度。计算前缀和需要 O(n) 的时间，动态规划需要计算 O(k×n)个状态，每个状态的计算时间是 O(n)。
+//空间复杂度：O(k×n) 或 O(n)，其中 k 是分组的最大子数组数目，n 是数组 nums 的长度。二维数组实现的空间复杂度是 O(k×n)，一维数组实现的空间复杂度是 O(n)。
 public class _813_最大平均值和的分组 {
     public double largestSumOfAverages(int[] nums, int k) {
         int n = nums.length;
@@ -33,5 +35,26 @@ public class _813_最大平均值和的分组 {
             }
         }
         return dp[n][k];
+    }
+    //由于 dp[i][j]的计算只利用到 j−1的数据，因此也可以使用一维数组对 dp[i][j]进行计算，在计算过程中，要注意对 i 进行逆序遍历。
+
+    public double largestSumOfAveragesOpt(int[] nums, int k) {
+        int n = nums.length;
+        double[] prefix = new double[n + 1];
+        for (int i = 0; i < n; i++) {
+            prefix[i + 1] = prefix[i] + nums[i];
+        }
+        double[] dp = new double[n + 1];
+        for (int i = 1; i <= n; i++) {
+            dp[i] = prefix[i] / i;
+        }
+        for (int j = 2; j <= k; j++) {
+            for (int i = n; i >= j; i--) {
+                for (int x = j - 1; x < i; x++) {
+                    dp[i] = Math.max(dp[i], dp[x] + (prefix[i] - prefix[x]) / (i - x));
+                }
+            }
+        }
+        return dp[n];
     }
 }

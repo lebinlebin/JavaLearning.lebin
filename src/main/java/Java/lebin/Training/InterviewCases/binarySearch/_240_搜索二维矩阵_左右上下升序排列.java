@@ -5,7 +5,6 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  * 编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
  * 每行的元素从左到右升序排列。
  * 每列的元素从上到下升序排列。
- *
  * 算法：
  * 首先，我们初始化一个指向矩阵左下角的 (row，col)指针。然后，
  * 直到找到目标并返回 true（或者指针指向矩阵维度之外的 (row，col) 为止，

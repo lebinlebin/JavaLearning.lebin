@@ -18,7 +18,7 @@ import java.util.Arrays;
 /*
 思路 先找到右子树的开始位置，然后分别进行左右子树递归处理
  */
-public class 剑指Offer33_二叉搜索树的后序遍历序列 {
+public class _33_二叉搜索树的后序遍历序列 {
 
 	public boolean verifyPostorder(int[] postorder) {
 		return recur(postorder, 0, postorder.length - 1);

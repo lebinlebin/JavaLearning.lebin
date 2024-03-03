@@ -9,7 +9,7 @@ import java.util.Arrays;
  输入：nums = [1,2,3,4]
  输出：[1,3,2,4] 注：[3,1,2,4] 也是正确的答案之一。
  */
-public class 剑指Offer21_调整数组顺序使奇数位于偶数前面 {
+public class _21_调整数组顺序使奇数位于偶数前面 {
 //    时间复杂度：O(N)
 //    空间复杂度：O(1)
     public static  int[] exchange(int[] nums) {

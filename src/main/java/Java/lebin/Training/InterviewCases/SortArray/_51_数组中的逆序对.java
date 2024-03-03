@@ -11,7 +11,7 @@ import java.util.Map;
  输入: [7,5,6,4]
  输出: 5
  */
-public class 剑指Offer51_数组中的逆序对 {
+public class _51_数组中的逆序对 {
     //归并计数法。分治算法
     //O(nlogn)就是归并排序的时间复杂度
     //空间复杂度O(n)
@@ -51,7 +51,6 @@ public class 剑指Offer51_数组中的逆序对 {
         //对三部分逆序对进行加和
         return leftPairs + rightPairs + crossPairs;
     }
-
     //nums[left,...,mid] 需要是有序的，nums[mid+1,...,right]需要是有序的
     private int mergeAndCount(int[] nums, int left, int mid, int right, int[] temp) {
         //拷贝到辅助数组中。
@@ -83,6 +82,8 @@ public class 剑指Offer51_数组中的逆序对 {
         }
         return count;//返回计数器变量
     }
+
+
     //=======================================================================
     //暴力解法，超时
     // 枚举所有的数对
