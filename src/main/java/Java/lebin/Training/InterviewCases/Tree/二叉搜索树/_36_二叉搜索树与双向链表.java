@@ -15,7 +15,7 @@ package Java.lebin.Training.InterviewCases.Tree.二叉搜索树;
 双向链表： 在构建相邻节点的引用关系时，设前驱节点 pre 和当前节点 cur ，不仅应构建 pre.right = cur ，也应构建 cur.left = pre 。
 循环链表： 设链表头节点 head 和尾节点 tail ，则应构建 head.left = tail 和 tail.right = head 。
  */
-public class 剑指Offer36_二叉搜索树与双向链表 {
+class 剑指Offer36_二叉搜索树与双向链表 {
     Node2 head, pre;
     public Node2 treeToDoublyList(Node2 root) {
         if(root==null) return null;

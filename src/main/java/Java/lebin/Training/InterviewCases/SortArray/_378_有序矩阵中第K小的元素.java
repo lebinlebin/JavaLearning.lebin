@@ -3,12 +3,10 @@ package Java.lebin.Training.InterviewCases.SortArray;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
 /*
 给你一个 n x n 矩阵 matrix ，其中每行和每列元素均按升序排序，找到矩阵中第 k 小的元素。
 请注意，它是 排序后 的第 k 小元素，而不是第 k 个 不同 的元素。
-你必须找到一个内存复杂度优于 O(n2) 的解决方案。
-
+你必须找到一个内存复杂度优于 O(n^2) 的解决方案。
 示例 1：
 输入：matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8
 输出：13
@@ -16,7 +14,6 @@ import java.util.PriorityQueue;
 示例 2：
 输入：matrix = [[-5]], k = 1
 输出：-5
-
  */
 public class _378_有序矩阵中第K小的元素 {
     //最直接的做法是将这个二维数组转成一维数组，并对该一维数组进行排序。最后这个一维数组中的第 k 个数即为答案。
@@ -38,6 +35,10 @@ public class _378_有序矩阵中第K小的元素 {
     时间复杂度：O(klogn)，归并 k 次，每次堆中插入和弹出的操作时间复杂度均为 logn。
     空间复杂度：O(n)，堆的大小始终为 n。
     需要注意的是，k 在最坏情况下是 n^2，因此该解法最坏时间复杂度为 O(n^2*log{n})
+     */
+    /*
+    由题目给出的性质可知，这个矩阵的每一行均为一个有序数组。问题即转化为从这 n 个有序数组中找第 k 大的数，可以想到利用归并排序的做法，归并到第 k 个数即可停止。
+    一般归并排序是两个数组归并，而本题是 n 个数组归并，所以需要用小根堆维护，以优化时间复杂度。
      */
     public int kthSmallest2(int[][] matrix, int k) {
         PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
