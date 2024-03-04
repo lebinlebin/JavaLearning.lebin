@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  时间复杂度：O(n)。其中n为链表的长度。
  空间复杂度：O(1)。原地复制链表，不需要额外的辅助空间。
  */
-public class 剑指Offer35_复杂链表的复制 {
+public class _138_随机链表的复制 {
 	public Node copyRandomList(Node head) {
 		if(head == null) return head;
 		Node node = head;

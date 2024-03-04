@@ -22,7 +22,7 @@ package Java.lebin.Training.InterviewCases.DFS回溯;
  word = "abcd"
  输出：false
  */
-public class 剑指Offer12_矩阵中的路径 {
+public class _79_单词搜索_矩阵中的路径 {
 	public boolean exist(char[][] board, String word) {
 		if (board == null || board.length == 0 || board[0].length == 0) {
 			return false;
