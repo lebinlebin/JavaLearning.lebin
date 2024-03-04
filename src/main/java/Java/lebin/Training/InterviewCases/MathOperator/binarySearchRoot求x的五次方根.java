@@ -1,6 +1,6 @@
 package Java.lebin.Training.InterviewCases.MathOperator;
 
-public class binarySearchRoot {
+public class binarySearchRoot求x的五次方根 {
     //给一个实数x, 求x的五次方根
     public static double binarySearchRoot(double x) {
         double low = 0;

@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.各种k个数;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -12,7 +12,7 @@ import java.util.Random;
  输入：arr = [3,2,1], k = 2
  输出：[1,2] 或者 [2,1]
  */
-public class _剑指Offer40_最小的k个数 {
+public class _40_最小的k个数 {
     //基础版本
     /*
     复杂度分析
@@ -139,6 +139,4 @@ public class _剑指Offer40_最小的k个数 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-
-
 }

@@ -16,7 +16,7 @@ import java.util.Queue;
 假如使用BFS，给定一个k值，判断不超过k的情况下能不能搜索到一条从左上角到右下角的路径，因为我们对k进行二分查找，所以需要确定二分范围，每个格子高度范围在 1<=h<=10^6,所以在该范围内进行二分。
  */
 //广度优先搜索 用队列
-//深度度优先搜索 用栈
+//广度优先搜索 用栈
 public class _1631_最小体力消耗路径 {
     int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
     public int minimumEffortPath(int[][] heights) {
@@ -29,7 +29,6 @@ public class _1631_最小体力消耗路径 {
             queue.offer(new int[]{0, 0});
             boolean[] seen = new boolean[m * n];
             seen[0] = true;
-
             while (!queue.isEmpty()) {
                 int[] cell = queue.poll();
                 int x = cell[0], y = cell[1];
@@ -42,7 +41,6 @@ public class _1631_最小体力消耗路径 {
                     }
                 }
             }
-
             if (seen[m * n - 1]) {
                 ans = mid;
                 right = mid - 1;
