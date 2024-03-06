@@ -11,7 +11,7 @@ import java.util.Stack;
  */
 //时间复杂度 O(N)
 //空间复杂度 O(N)
-public class 剑指Offer06_从尾到头打印链表 {
+public class _06_从尾到头打印链表_反向输出链表 {
 	public int[] reversePrint(ListNode head) {
 		Stack<ListNode> stack = new Stack<ListNode>();
 		ListNode temp = head;

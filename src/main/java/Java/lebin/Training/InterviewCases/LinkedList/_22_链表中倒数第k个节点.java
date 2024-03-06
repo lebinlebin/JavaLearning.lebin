@@ -10,7 +10,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  */
 //时间复杂度 O(N)
 //空间复杂度 O(1)
-public class _剑指Offer22_链表中倒数第k个节点 {
+public class _22_链表中倒数第k个节点 {
 	public ListNode getKthFromEnd(ListNode head, int k) {
 		ListNode former = head;
 		ListNode latter = head;

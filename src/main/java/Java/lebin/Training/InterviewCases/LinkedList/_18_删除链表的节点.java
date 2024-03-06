@@ -8,7 +8,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
 时间复杂度 O(N) ： N 为链表长度，删除操作平均需循环 N/2 次，最差 N 次。
 空间复杂度 O(1) ： cur, pre 占用常数大小额外空间。
  */
-public class _剑指Offer18_删除链表的节点 {
+public class _18_删除链表的节点 {
 	public ListNode deleteNode(ListNode head, int val) {
 		if(head.val == val) return head.next;
 		ListNode pre = head;
