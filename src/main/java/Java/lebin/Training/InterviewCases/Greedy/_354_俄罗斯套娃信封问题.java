@@ -21,6 +21,12 @@ import java.util.Comparator;
 //时间复杂度为 O(NlogN)，因为排序和计算 LIS 各需要 O(NlogN)的时间。
 //空间复杂度为 O(N)，因为计算 LIS 的函数中需要一个 top 数组。
 public class _354_俄罗斯套娃信封问题 {
+    /*
+    先对宽度 w 进行升序排序，如果遇到 w 相同的情况，则按照高度 h 降序排序。
+    之后把所有的 h 作为一个数组，在这个数组上计算 LIS 的长度就是答案。
+    对于宽度 w 相同的数对，要对其高度 h 进行降序排序。
+    逆序排序保证在 w 相同的数对中最多只选取一个。
+     */
     // envelopes = [[w, h], [w, h]...]
     public int maxEnvelopes(int[][] envelopes) {
         int n = envelopes.length;
@@ -37,8 +43,32 @@ public class _354_俄罗斯套娃信封问题 {
         for (int i = 0; i < n; i++)
             height[i] = envelopes[i][1];
 
-        return lengthOfLIS(height);
+        return lengthOfLISdp(height);
     }
+
+
+    static int lengthOfLISdp(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        //dp定义是以当前位置i数字结尾的最长递增序列长度为dp[i].
+        //dp数组与输入的数组的长度是相同的
+        int[] dp = new int[nums.length];
+        //base case lcs最小为1；max一定要赋值初始值为1
+        int max = dp[0] = 1;
+        //确定了basecase之后就要从下一个index开始遍历。dp数组为一维数组，那么遍历是一重遍历
+        for (int i = 1; i < dp.length; i++) {
+            dp[i] = 1;//最小为1，dp数组按照1进行初始化
+            //每个i都要遍历i之前的所有数组，进行比较大小
+            for (int j = 0; j < i; j++) {
+                if (nums[i] <= nums[j]) continue;//没法接在后边
+                //nums[i] > nums[j] 那么包含当前遍历元素nums[i]在内，可以组成一个新的递增序列，长度是dp[j] + 1
+                dp[i] = Math.max(dp[i], dp[j] + 1);//可以接在后边组成新的lis
+            }
+            //把最大值记录下来
+            max = Math.max(dp[i], max);
+        }
+        return max;
+    }
+
     /* 返回 nums 中 LIS 的长度 */
     public int lengthOfLIS(int[] nums) {
         int piles = 0, n = nums.length;

@@ -12,7 +12,7 @@ import java.util.Stack;
 //时间复杂度：O(n)
 //空间复杂度：O(n)
 //将两个nums数组拼接在一起，使用单调栈计算出每一个元素的下一个最大值，最后再把结果集即result数组resize到原数组大小就可以了。
-public class _503_下一个更大元素2_单调栈 {
+public class _503_下一个更大元素2_循环数组 {
 	public int[] nextGreaterElements(int[] nums) {
 		//边界判断
 		if(nums == null || nums.length <= 1) {
