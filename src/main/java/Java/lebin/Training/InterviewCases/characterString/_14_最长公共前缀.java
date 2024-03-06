@@ -25,7 +25,7 @@ public class _14_最长公共前缀 {
 		int count = strs.length;
 		for (int i = 1; i < count; i++) {
 			prefix = longestCommonPrefix(prefix, strs[i]);
-			if (prefix.length() == 0) {
+			if (prefix.length() == 0) {//剪枝操作
 				break;
 			}
 		}

@@ -20,6 +20,7 @@ public class _4_寻找两个正序数组的中位数 {
 如果 B 数组此刻已经没有数字了，继续取数字 B[ bStart ]，则会越界，所以判断下 bStart 是否大于数组长度了，
 这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 aStart＜alen && (bStart >= blen || A[aStart] < B[bStart] ) 。
 */
+
 //时间复杂度：遍历 len/2+1 次，len=m+n，时间复杂度依旧是 O(m+n)。
 //空间复杂度是 O(1）
 //空间复杂度：申请了常数个变量， alen，blen，totallen，left，right，aStart，bStart 以及 i。

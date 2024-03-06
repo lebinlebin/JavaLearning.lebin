@@ -9,7 +9,7 @@ package Java.lebin.Training.InterviewCases.DP.子序列_一个串_一维DP;
  输出：6
  解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
  */
-public class _53_最大子数组和 {
+public class _53_最大连续子数组最大和 {
 	/**
 	 * 1.dp[i]代表以前下标i结尾的连续子数组最大和
 	 * 2.递推公式 dp[i] = max (dp[i-1]+nums[i],nums[i]) res = max(res,dp[i])

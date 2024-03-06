@@ -24,7 +24,7 @@ package Java.lebin.Training.InterviewCases.characterString;
 我们用 f[i][j] 表示 s 的前 i 个字符与 p 中的前 j 个字符是否能够匹配。
 
  */
-public class _10_正则表达式匹配 {
+public class _10_正则表达式匹配_两个串进行匹配 {
     public boolean isMatch(String s, String p) {
         char[] cs = s.toCharArray();
         char[] cp = p.toCharArray();

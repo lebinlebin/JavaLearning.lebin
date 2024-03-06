@@ -28,7 +28,6 @@ public class _84_柱状图中最大的矩形 {
         }
         heights = newHeights;
         //---------------------------------------
-
         st.push(0);
         int result = 0;
         // 第一个元素已经入栈，从下标1开始
@@ -54,6 +53,15 @@ public class _84_柱状图中最大的矩形 {
         }
         return result;
     }
+
+
+
+
+
+
+
+
+
 
     // 暴力解法: 时间复杂度是O(n^2)。
     public int largestRectangleArea(int[] heights) {

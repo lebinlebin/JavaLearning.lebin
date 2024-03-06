@@ -17,7 +17,7 @@ package Java.lebin.Training.InterviewCases.Greedy;
 //用最少的步数获得最大的覆盖范围。尽可能的增加覆盖范围
 //时间复杂度: O(n)
 //空间复杂度: O(1)
-public class _45_跳跃游戏2 {
+public class _45_跳跃游戏2_最少的跳跃次数达到数组最后位置 {
 	public int jump(int[] nums) {
 		if (nums.length == 1) return 0;
 		int curDistance = 0;// 当前覆盖最远距离下标

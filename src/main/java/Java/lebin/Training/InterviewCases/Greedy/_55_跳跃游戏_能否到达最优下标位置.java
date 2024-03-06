@@ -17,7 +17,7 @@ package Java.lebin.Training.InterviewCases.Greedy;
  */
 //时间复杂度: O(n)
 //空间复杂度: O(1)
-public class _55_跳跃游戏 {
+public class _55_跳跃游戏_能否到达最优下标位置 {
 	/*
 	局部最优解：每次取最大跳跃步数（取最大覆盖范围），
 	整体最优解：最后得到整体最大覆盖范围，看是否能到终点。

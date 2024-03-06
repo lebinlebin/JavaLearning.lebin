@@ -13,7 +13,7 @@ package Java.lebin.Training.InterviewCases.DP.子序列_一个串_一维DP;
 输入：nums = [7,7,7,7,7,7,7]
 输出：1
  */
-public class _300_最长上升子序列_LIS {
+public class _300_最长上升子序列_LIS_可间隔 {
 	/**
 	 * 1. dp数组定义
 	 * 		dp[i]表示i之前包括i的以nums[i]结尾的最长递增子序列的长度
