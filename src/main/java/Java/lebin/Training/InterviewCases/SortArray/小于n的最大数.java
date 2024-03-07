@@ -20,11 +20,6 @@ import java.util.Arrays;
 那我最多选择四个数，否则五位数一定比四位数大)。然后每次选好了，只要比target小，我们就记录一下Max值就好啦。
  */
 public class 小于n的最大数 {
-    public static void main(String[] args) {
-        int num = 2000;
-        int numns [] = new int[]{1,2,4,9};
-        System.out.println(getMax(num, numns));
-    }
     public static int max = Integer.MIN_VALUE;
     public static int len ;
     public static int targetNum;
@@ -53,5 +48,11 @@ public class 小于n的最大数 {
             cur /= 10;
             curLen -= 1;
         }
+    }
+
+    public static void main(String[] args) {
+        int num = 2000;
+        int numns [] = new int[]{1,2,4,9};
+        System.out.println(getMax(num, numns));
     }
 }
