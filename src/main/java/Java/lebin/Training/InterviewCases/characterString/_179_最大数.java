@@ -12,15 +12,23 @@ import java.util.Arrays;
 输出："9534330"
  */
 public class _179_最大数 {
-
-    public String largestNumber(int[] nums) {
+/*
+时间复杂度：由于是对 String进行排序，当排序对象不是 Java 中的基本数据类型时，
+不会使用快排（考虑排序稳定性问题）。Arrays.sort() 的底层实现会「元素数量/元素是否大致有序」
+决定是使用插入排序还是归并排序。这里直接假定使用的是「插入排序」。复杂度为 O(n^2).
+空间复杂度：O(n)
+ */
+    public static  String largestNumber(int[] nums) {
         String[] strs = new String[nums.length];
 
         //转化为字符串
         for (int i = 0; i < nums.length; i++)
             strs[i] = String.valueOf(nums[i]);
-        //以字符串进行比较
+        //以字符串进行比较 '2'>'10'
         Arrays.sort(strs, (x, y) -> (y + x).compareTo(x + y));
+        for(String S:strs){
+            System.out.println(S);
+        }
         if (strs[0].equals("0"))
             return "0";
         StringBuilder res = new StringBuilder();
@@ -57,5 +65,10 @@ public class _179_最大数 {
             ret.append(num);
         }
         return ret.toString();
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[] {10,2};
+        System.out.println(largestNumber(nums));
     }
 }
