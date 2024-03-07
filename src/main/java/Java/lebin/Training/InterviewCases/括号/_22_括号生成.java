@@ -13,16 +13,23 @@ import java.util.List;
  * 输入：n = 1
  * 输出：["()"]
  */
+/*
+1. 当左边的括号数>=右边的括号数的时候，递归继续
+2. 当左边的括号数<右边的括号数  剪枝，递归终止进入下一次递归
+3. 当左边的括号数和右边的括号数相等的时候，返回有效的括号
+ */
 class _22_括号生成 {
     List<String> res = new ArrayList<String>();
     public List<String> generateParenthesis(int n) {
         StringBuilder track = new StringBuilder();
+        //left 和right表示目前左边括号和右边括号的数量
         backtrack(res, track, 0, 0, n);
         return res;
     }
 
     public void backtrack(List<String> res, StringBuilder track, int left, int right, int n_pair) {
 
+        if(right > left){return;}
         //终止
         if (track.length() == n_pair * 2) {
             res.add(track.toString());
