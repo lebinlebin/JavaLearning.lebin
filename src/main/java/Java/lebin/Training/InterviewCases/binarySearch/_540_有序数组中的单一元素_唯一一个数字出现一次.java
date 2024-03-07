@@ -23,7 +23,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 时间复杂度：O(logn)，其中 n 是数组 nums 的长度。需要在全数组范围内二分查找，二分查找的时间复杂度是 O(logn)。
 空间复杂度：O(1)。
  */
-public class _540_有序数组中的单一元素 {
+public class _540_有序数组中的单一元素_唯一一个数字出现一次 {
     public int singleNonDuplicate(int[] nums) {
         int low = 0;
         int len = nums.length;

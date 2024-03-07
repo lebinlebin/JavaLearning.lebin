@@ -27,7 +27,6 @@ class _11_旋转数组的最小值_二分查找 {
 
 
 
-
 	public static int minArray2(int[] array) {
 		int left = 0;
 		int right = array.length-1;

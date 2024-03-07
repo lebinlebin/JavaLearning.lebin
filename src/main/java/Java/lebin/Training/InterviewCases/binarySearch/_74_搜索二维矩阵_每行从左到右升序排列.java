@@ -5,15 +5,14 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  * 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
  * 每行中的整数从左到右按升序排列。
  * 每行的第一个整数大于前一行的最后一个整数。
- *
  * 方法一：两次二分查找
  * 思路
- *
  * 由于每行的第一个元素大于前一行的最后一个元素，且每行元素是升序的，所以每行的第一个元素大于前一行的第一个元素，因此矩阵第一列的元素是升序的。
- *
  * 我们可以对矩阵的第一列的元素二分查找，找到最后一个不大于目标值的元素，然后在该元素所在行中二分查找目标值是否存在。
  */
-public class _74_搜索二维矩阵_两次二分查找 {
+//时间复杂度 O(logmn)
+//空间复杂度：O(1)
+public class _74_搜索二维矩阵_每行从左到右升序排列 {
 		public boolean searchMatrix(int[][] matrix, int target) {
 			int rowIndex = binarySearchFirstColumn(matrix, target);
 			if (rowIndex < 0) {

@@ -1,11 +1,12 @@
 package Java.lebin.Training.InterviewCases.binarySearch;
 
 /**
- * 二分查找
+ 二分查找
+ 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
  */
 //时间复杂度：O(logn)，其中 n 是数组的长度。
 //空间复杂度：O(1)。
-public class _704_二分查找 {
+public class _704_二分查找_寻找左右边界 {
 	public int search(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1; // 注意
@@ -65,6 +66,8 @@ public class _704_二分查找 {
 			return -1;
 		return right;//退出条件是 left= right+1
 	}
+
+
 
 	//	（版本一）左闭右闭区间
 	public int search_left_right(int[] nums, int target) {

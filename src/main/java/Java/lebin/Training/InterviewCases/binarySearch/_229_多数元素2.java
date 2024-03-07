@@ -18,6 +18,8 @@ import java.util.List;
 
  */
 public class _229_多数元素2 {
+    //时间复杂度：O(n)
+    //空间复杂度：O(n)
     public List<Integer> majorityElement(int[] nums) {
         HashMap<Integer, Integer> cnt = new HashMap<Integer, Integer>();
 

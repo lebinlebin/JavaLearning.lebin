@@ -28,7 +28,6 @@ import java.util.Arrays;
 public class _34_在排序数组中查找目标元素的第一个和最后一个位置 {
 //	时间复杂度： O(logn) ，其中 n 为数组的长度。二分查找的时间复杂度为 O(logn)，一共会执行两次，因此总时间复杂度为 O(logn)。
 //	空间复杂度：O(1) 。只需要常数空间存放若干变量。
-
 	public int[] searchRange(int[] nums, int target) {
 		int leftIdx = binarySearch(nums, target, true);
 		int rightIdx = binarySearch(nums, target, false) - 1;
