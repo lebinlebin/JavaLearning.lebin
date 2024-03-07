@@ -13,7 +13,7 @@ LCR 070. 有序数组中的单一元素
 输入: nums =  [3,3,7,7,10,11,11]
 输出: 10
  */
-public class _LCR070_有序数组中的单一元素 {
+public class _LCR070_有序数组中的单一元素_其它都出现两次 {
     public int singleNonDuplicate(int[] nums) {
         Map<Integer,Integer> map = new HashMap<>();
         for(int i = 0;i<nums.length;i++){
@@ -27,7 +27,7 @@ public class _LCR070_有序数组中的单一元素 {
         }
         return 0;
     }
-
+    //二分查找
     public int singleNonDuplicate2(int[] nums) {
         int low = 0;
         int len = nums.length;

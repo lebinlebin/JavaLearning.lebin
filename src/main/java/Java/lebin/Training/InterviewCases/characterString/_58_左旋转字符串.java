@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.characterString;
  输入: s = "lrloseumgh", k = 6
  输出: "umghlrlose"
  */
-public class 剑指Offer58II_左旋转字符串 {
+public class _58_左旋转字符串 {
 	/*
 	时间复杂度: O(n)
 	空间复杂度：O(1)
