@@ -18,12 +18,11 @@ package Java.lebin.Training.InterviewCases.characterString;
 输出：true
 解释：".*" 表示可匹配零个或多个（'*'）任意字符（'.'）。
  */
+/*
+我们用 dp[i][j] 表示 s 的前 i 个字符与 p 中的前 j 个字符是否能够匹配。
+ */
 //时间复杂度：O(mn)，其中 m 和 n 分别是字符串 s 和 p 的长度。我们需要计算出所有的状态，并且每个状态在进行转移时的时间复杂度为 O(1)
 //空间复杂度：O(mn)，即为存储所有状态使用的空间。
-/*
-我们用 f[i][j] 表示 s 的前 i 个字符与 p 中的前 j 个字符是否能够匹配。
-
- */
 public class _10_正则表达式匹配_两个串进行匹配 {
     public boolean isMatch(String s, String p) {
         char[] cs = s.toCharArray();
@@ -47,6 +46,7 @@ public class _10_正则表达式匹配_两个串进行匹配 {
         // 填格子
         for (int i = 1; i <= cs.length; i++) {
             for (int j = 1; j <= cp.length; j++) {
+
                 // 文本串和模式串末位字符能匹配上
                 if (cs[i - 1] == cp[j - 1] || cp[j - 1] == '.') {
                     dp[i][j] = dp[i - 1][j - 1];
@@ -59,6 +59,7 @@ public class _10_正则表达式匹配_两个串进行匹配 {
                         dp[i][j] = dp[i][j - 2];     // *只能匹配0次
                     }
                 }
+
             }
         }
         return dp[cs.length][cp.length];

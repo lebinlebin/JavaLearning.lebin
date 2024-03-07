@@ -22,7 +22,8 @@ public class _5_最长回文子串_一个串 {
 	 		那么aba的区间就是 i+1 与 j-1区间，这个区间是不是回文就看dp[i + 1][j - 1]是否为true。
 	 3. 初始化  全部默认初始化为false
 	 */
-
+	//时间复杂度：O(n^2)
+	//空间复杂度：O(n^2)
 	public String longestPalindromeDp(String s) {
 		if (s == null) return null;
 		char[] cs = s.toCharArray();

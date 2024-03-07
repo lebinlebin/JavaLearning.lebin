@@ -15,7 +15,7 @@ import java.util.Arrays;
  * 输出: false
  * 解释: 你不能在只改变一个元素的情况下将其变为非递减数列。
  */
-public class _665_非递减数列 {
+public class _665_非递减数列_改变一个元素非递减数列 {
 //	时间复杂度：O(n)，其中 n 是数组 nums 的长度。
 //	空间复杂度：O(1)。
 public boolean checkPossibility(int[] nums) {
