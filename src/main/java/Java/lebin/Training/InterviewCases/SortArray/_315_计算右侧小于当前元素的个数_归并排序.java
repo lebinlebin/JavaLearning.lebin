@@ -14,7 +14,7 @@ import java.util.*;
  * 6 的右侧有 1 个更小的元素 (1)
  * 1 的右侧有 0 个更小的元素
  */
-public class _315_计算右侧小于当前元素的个数 {
+public class _315_计算右侧小于当前元素的个数_归并排序 {
     private int[] c;
     private int[] a;
 
