@@ -24,7 +24,7 @@ import java.util.Comparator;
 这里，我们使用了O(n)的额外空间去保存nums的副本。尽管我们就地进行了一些额外的工作，但最后返回的数组需要
  的空间。因此，需要的额外空间与nums大小成线性关系。
  */
-public class _179_最大数 {
+public class _179_最大数_重新排列整数顺序 {
     private class LargerNumberComparator implements Comparator<String> {
         public int compare(String a, String b) {
             String order1 = a + b;

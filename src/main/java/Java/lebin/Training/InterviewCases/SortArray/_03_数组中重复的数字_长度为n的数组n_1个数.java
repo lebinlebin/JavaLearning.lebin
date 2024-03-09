@@ -13,7 +13,7 @@ import java.util.*;
  */
 //时间复杂度:时间复杂度：O(n)
 //空间复杂度：O(n) set的大小
-public class _03_数组中重复的数字 {
+public class _03_数组中重复的数字_长度为n的数组n_1个数 {
     public int findRepeatNumber(int[] nums) {
         Set<Integer> set = new HashSet<Integer>();
         int repeat = -1;

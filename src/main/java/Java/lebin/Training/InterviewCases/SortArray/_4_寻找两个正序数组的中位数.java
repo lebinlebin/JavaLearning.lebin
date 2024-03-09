@@ -21,11 +21,9 @@ public class _4_寻找两个正序数组的中位数 {
 这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 aStart＜alen && (bStart >= blen || A[aStart] < B[bStart] ) 。
 */
 
-//时间复杂度：遍历 len/2+1 次，len=m+n，时间复杂度依旧是 O(m+n)。
+//时间复杂度：O(m+n)。遍历 len/2+1 次，len=m+n
 //空间复杂度是 O(1）
-//空间复杂度：申请了常数个变量， alen，blen，totallen，left，right，aStart，bStart 以及 i。
-//总共 8 个变量，空间复杂度是 O(1）。
-    public double findMedianSortedArrays2(int[] A, int[] B) {
+    public static double findMedianSortedArrays2(int[] A, int[] B) {
         int alen = A.length;
         int blen = B.length;
         int totallen = alen + blen;
@@ -53,16 +51,17 @@ public class _4_寻找两个正序数组的中位数 {
             //奇数的情况
             return right;
     }
-
+   //--------------------------------------------------------------------------------------------------------------------------------
 
     /*
     解法一中，我们一次遍历就相当于去掉不可能是中位数的一个值，也就是一个一个排除。
-    由于数列是有序的，其实我们完全可以一半儿一半儿的排除。假设我们要找第 k 小数，
+    由于数列是有序的，其实可以一半儿一半儿的排除。假设要找第 k 小数，
     可以每次循环排除掉 k/2 个数。
+    要找到第 k (k>1) 小的元素
      */
     //时间复杂度：O(log(m+n))
     //空间复杂度：O(1)
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int length1 = nums1.length, length2 = nums2.length;
         int totalLength = length1 + length2;
         if (totalLength % 2 == 1) {//奇数
@@ -77,7 +76,7 @@ public class _4_寻找两个正序数组的中位数 {
         }
     }
 
-    public int getKthElement(int[] nums1, int[] nums2, int k) {
+    public static int getKthElement(int[] nums1, int[] nums2, int k) {
         /* 主要思路：要找到第 k (k>1) 小的元素，那么就取 pivot1 = nums1[k/2-1] 和 pivot2 = nums2[k/2-1] 进行比较。 这里的 "/" 表示整除
          * nums1 中小于等于 pivot1 的元素有 nums1[0 .. k/2-2] 共计 k/2-1 个
          * nums2 中小于等于 pivot2 的元素有 nums2[0 .. k/2-2] 共计 k/2-1 个
@@ -85,14 +84,14 @@ public class _4_寻找两个正序数组的中位数 {
          * 这样 pivot 本身最大也只能是第 k-1 小的元素
          * 如果 pivot = pivot1，那么 nums1[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums1 数组
          * 如果 pivot = pivot2，那么 nums2[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums2 数组
+         * 每次排除k/2-1个元素
          * 由于我们 "删除" 了一些元素（这些元素都比第 k 小的元素要小），因此需要修改 k 的值，减去删除的数的个数
          */
         int length1 = nums1.length;
         int length2 = nums2.length;
         int index1 = 0;
         int index2 = 0;
-        int kthElement = 0;
-
+        //循环排除法
         while (true) {
             // 边界情况 第一个数组大小为0
             if (index1 == length1) {
@@ -116,7 +115,7 @@ public class _4_寻找两个正序数组的中位数 {
             int pivot1 = nums1[newIndex1];
             int pivot2 = nums2[newIndex2];
 
-            if (pivot1 <= pivot2) {
+            if (pivot1 <= pivot2) {//pivot取最小的那个
                 k -= (newIndex1 - index1 + 1);//变化k值，变化index1的值，排除掉k/2-1个元素
                 index1 = newIndex1 + 1;//删掉
             } else {
@@ -125,5 +124,12 @@ public class _4_寻找两个正序数组的中位数 {
             }
         }
 
+    }
+
+    public static void main(String[] args) {
+        //nums1 = [1,3], nums2 = [2]
+        int[] nums1 = new int[]{1,3};
+        int[] nums2 = new int[]{2};
+        System.out.println(findMedianSortedArrays(nums1,nums2));
     }
 }

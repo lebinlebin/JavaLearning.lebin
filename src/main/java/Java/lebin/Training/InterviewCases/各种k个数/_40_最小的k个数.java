@@ -13,6 +13,83 @@ import java.util.Random;
  输出：[1,2] 或者 [2,1]
  */
 public class _40_最小的k个数 {
+    /*
+    方法三：快排思想
+    思路和算法
+    我们可以借鉴快速排序的思想。我们知道快排的划分函数每次执行完后都能将数组分成两个部分，小于等于分界值 pivot 的元素的都会被放到数组的左边，
+    大于的都会被放到数组的右边，然后返回分界值的下标。与快速排序不同的是，快速排序会根据分界值的下标递归处理划分的两侧，而这里我们只处理划分的一边。
+    我们定义函数 randomized_selected(arr, l, r, k) 表示划分数组 arr 的 [l,r] 部分，使前 k 小的数在数组的左侧，
+    在函数里我们调用快排的划分函数，假设划分函数返回的下标是 pos（表示分界值 pivot 最终在数组中的位置），
+    即 pivot 是数组中第 pos - l + 1 小的数，那么一共会有三种情况：
+    如果 pos - l + 1 == k，表示 pivot 就是第 kk 小的数，直接返回即可；
+    如果 pos - l + 1 < k，表示第 kk 小的数在 pivot 的右侧，因此递归调用 randomized_selected(arr, pos + 1, r, k - (pos - l + 1))；
+    如果 pos - l + 1 > k，表示第 kk 小的数在 pivot 的左侧，递归调用 randomized_selected(arr, l, pos - 1, k)。
+    函数递归入口为 randomized_selected(arr, 0, arr.length - 1, k)。在函数返回后，将前 k 个数放入答案数组返回即可。
+
+    复杂度分析
+
+    时间复杂度：期望为 O(n)，由于证明过程很繁琐，所以不再这里展开讲。具体证明可以参考《算法导论》第 9 章第 2 小节。
+    最坏情况下的时间复杂度为 O(n^2)。情况最差时，每次的划分点都是最大值或最小值，一共需要划分n−1 次，
+    而一次划分需要线性的时间复杂度，所以最坏情况下时间复杂度为 O(n^2)。
+    空间复杂度：期望为O(logn)，递归调用的期望深度为 O(logn)，每层需要的空间为 O(1)，只有常数个变量。
+    最坏情况下的空间复杂度为 O(n)。最坏情况下需要划分 n 次，即 randomized_selected 函数递归调用最深n−1 层，
+    而每层由于需要 O(1) 的空间，所以一共需要 O(n) 的空间复杂度。
+     */
+    private final static Random random = new Random(System.currentTimeMillis());
+    public int[] getLeastNumbers3(int[] arr, int k) {
+        randomizedSelected(arr, 0, arr.length - 1, k);
+        int[] vec = new int[k];
+        for (int i = 0; i < k; ++i) {
+            vec[i] = arr[i];
+        }
+        return vec;
+    }
+
+    private void randomizedSelected(int[] arr, int l, int r, int k) {
+        if (l >= r) {
+            return;
+        }
+        int pos = randomizedPartition(arr, l, r);
+
+        int num = pos - l + 1;
+        if (k == num) {
+            return;
+        } else if (k < num) {
+            randomizedSelected(arr, l, pos - 1, k);
+        } else {
+            randomizedSelected(arr, pos + 1, r, k - num);
+        }
+    }
+
+    // 基于随机的划分
+    //当随机元素是随机选择的情况下，遇到时间复杂度成为O(n^2)的可能性是大大降低了。
+    //因此有一定概率头几次就能选到第k大元素。
+    private int randomizedPartition(int[] nums, int l, int r) {
+//        int i = new Random().nextInt(r - l + 1) + l;
+        int i = random.nextInt(r - l + 1) + l;
+        swap(nums, r, i);
+        return partition(nums, l, r);
+    }
+
+    private int partition(int[] nums, int l, int r) {
+        int pivot = nums[r];//通过随机选择得到的
+        int i = l - 1;//循环不变量，i指向pivot前边排好序数组的
+        for (int j = l; j <= r - 1; ++j) {
+            if (nums[j] <= pivot) {
+                i = i + 1;
+                swap(nums, i, j);
+            }
+        }
+        swap(nums, i + 1, r);
+        return i + 1;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
     //基础版本
     /*
     复杂度分析
@@ -64,79 +141,5 @@ public class _40_最小的k个数 {
             vec[i] = queue.poll();
         }
         return vec;
-    }
-
-    /*
-    方法三：快排思想
-    思路和算法
-    我们可以借鉴快速排序的思想。我们知道快排的划分函数每次执行完后都能将数组分成两个部分，小于等于分界值 pivot 的元素的都会被放到数组的左边，
-    大于的都会被放到数组的右边，然后返回分界值的下标。与快速排序不同的是，快速排序会根据分界值的下标递归处理划分的两侧，而这里我们只处理划分的一边。
-    我们定义函数 randomized_selected(arr, l, r, k) 表示划分数组 arr 的 [l,r] 部分，使前 k 小的数在数组的左侧，
-    在函数里我们调用快排的划分函数，假设划分函数返回的下标是 pos（表示分界值 pivot 最终在数组中的位置），
-    即 pivot 是数组中第 pos - l + 1 小的数，那么一共会有三种情况：
-    如果 pos - l + 1 == k，表示 pivot 就是第 kk 小的数，直接返回即可；
-    如果 pos - l + 1 < k，表示第 kk 小的数在 pivot 的右侧，因此递归调用 randomized_selected(arr, pos + 1, r, k - (pos - l + 1))；
-    如果 pos - l + 1 > k，表示第 kk 小的数在 pivot 的左侧，递归调用 randomized_selected(arr, l, pos - 1, k)。
-    函数递归入口为 randomized_selected(arr, 0, arr.length - 1, k)。在函数返回后，将前 k 个数放入答案数组返回即可。
-
-    复杂度分析
-
-    时间复杂度：期望为 O(n)O(n) ，由于证明过程很繁琐，所以不再这里展开讲。具体证明可以参考《算法导论》第 9 章第 2 小节。
-
-    最坏情况下的时间复杂度为 O(n^2)。情况最差时，每次的划分点都是最大值或最小值，一共需要划分n−1 次，
-    而一次划分需要线性的时间复杂度，所以最坏情况下时间复杂度为 O(n^2)。
-    空间复杂度：期望为O(logn)，递归调用的期望深度为 O(logn)，每层需要的空间为 O(1)，只有常数个变量。
-    最坏情况下的空间复杂度为 O(n)。最坏情况下需要划分 n 次，即 randomized_selected 函数递归调用最深n−1 层，
-    而每层由于需要 O(1) 的空间，所以一共需要 O(n) 的空间复杂度。
-     */
-
-    public int[] getLeastNumbers3(int[] arr, int k) {
-        randomizedSelected(arr, 0, arr.length - 1, k);
-        int[] vec = new int[k];
-        for (int i = 0; i < k; ++i) {
-            vec[i] = arr[i];
-        }
-        return vec;
-    }
-
-    private void randomizedSelected(int[] arr, int l, int r, int k) {
-        if (l >= r) {
-            return;
-        }
-        int pos = randomizedPartition(arr, l, r);
-        int num = pos - l + 1;
-        if (k == num) {
-            return;
-        } else if (k < num) {
-            randomizedSelected(arr, l, pos - 1, k);
-        } else {
-            randomizedSelected(arr, pos + 1, r, k - num);
-        }
-    }
-
-    // 基于随机的划分
-    private int randomizedPartition(int[] nums, int l, int r) {
-        int i = new Random().nextInt(r - l + 1) + l;
-        swap(nums, r, i);
-        return partition(nums, l, r);
-    }
-
-    private int partition(int[] nums, int l, int r) {
-        int pivot = nums[r];
-        int i = l - 1;
-        for (int j = l; j <= r - 1; ++j) {
-            if (nums[j] <= pivot) {
-                i = i + 1;
-                swap(nums, i, j);
-            }
-        }
-        swap(nums, i + 1, r);
-        return i + 1;
-    }
-
-    private void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
     }
 }

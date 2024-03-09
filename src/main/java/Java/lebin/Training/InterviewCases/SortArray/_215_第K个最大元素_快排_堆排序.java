@@ -9,7 +9,55 @@ import java.util.Random;
  * 输入: [3,2,1,5,6,4] 和 k = 2
  * 输出: 5
  */
-public class _215_数组中的第K个最大元素_快排_堆排序 {
+public class _215_第K个最大元素_快排_堆排序 {
+    /*
+    方法一：基于快速排序的选择方法
+    由此可以发现每次经过「划分」操作后，我们一定可以确定一个元素的最终位置，即 x 的最终位置为 q，
+    并且保证 a[l,⋯,q−1] 中的每个元素小于等于 a[q]，且 a[q]小于等于a[q+1,⋯,r] 中的每个元素。
+    所以只要某次划分的 q 为倒数第 k 个下标的时候，我们就已经找到了答案。
+    我们只关心这一点，至于 a[l,⋯,q−1] 和 a[q+1,⋯,r] 是否是有序的，我们不关心。
+     */
+    //时间复杂度分析：平均情况下为O(n)
+    //这是因为我们每次都能排除掉一部分元素，所以平均情况下的时间复杂度为O(n)。
+    //但如果我们每次选择的基准都是最大或最小的元素，那么我们就需要遍历所有的元素，所以最坏情况下的时间复杂度为O(n^2)。
+    //空间复杂度：O(1)，这是因为我们只需要常数级别的额外空间。
+    public int findKthLargest (int[] nums, int k) {
+        int n = nums.length;
+        int p = quickSelect(nums, 0, n - 1, n - k + 1);//只要某次划分的 q 为倒数第 k 个下标的时候，就找到了答案。
+        return nums[p];
+    }
+
+    // 此处的 k 是按从小到大排的顺序
+    // return the index of the kth smallest number
+    private int quickSelect (int[] nums, int lo, int hi, int k) {
+        int i = lo;
+        int j = hi;
+        int pivot = nums[hi];
+        // < pivot 放左边
+        // >= pivot 放右边
+        while (i < j) {
+            if (nums[i++] > pivot) swap(nums, --i, --j);
+        }
+        swap(nums, i, hi); // 将 pivot 放入正确位置，当前i就是本次确定的排序大小的index位置，第i-lo+1大元素标定好了
+
+        // 计算 pivot 在数组中的位置
+        int m = i - lo + 1;
+        if (m == k){
+            return i;//那么就是第k大元素
+        } else if (m > k) {
+            return quickSelect(nums, lo, i - 1, k);//还要继续寻找更小的，要在低分段区间查找
+        } else {
+            return quickSelect(nums, i + 1, hi, k - m);//m < k 还要继续找更大的，还要找k-m次，才能确定第k大元素
+        }
+    }
+    //交换数组中两个元素的值
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+
     /*
     方法二：基于堆排序的选择方法
     建立一个大根堆，做 k - 1 次删除操作后堆顶元素就是我们要找的答案。
@@ -81,50 +129,5 @@ public class _215_数组中的第K个最大元素_快排_堆排序 {
             left = 2 * index + 1;
             right = 2 * index + 2;
         }
-
-    }
-    //交换数组中两个元素的值
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-//------------------------------------------------------------
-    /*
-    方法一：基于快速排序的选择方法
-    由此可以发现每次经过「划分」操作后，我们一定可以确定一个元素的最终位置，即 x 的最终位置为 q，
-    并且保证 a[l,⋯,q−1] 中的每个元素小于等于 a[q]，且 a[q]小于等于a[q+1,⋯,r] 中的每个元素。
-    所以只要某次划分的 q 为倒数第 k 个下标的时候，我们就已经找到了答案。
-    我们只关心这一点，至于 a[l,⋯,q−1] 和 a[q+1,⋯,r] 是否是有序的，我们不关心。
-     */
-    //    时间复杂度：平均情况下为O(n)，最坏情况下为O(n^2)，但最坏情况发生的概率非常小。
-    //这是因为我们每次都能排除掉一部分元素，所以平均情况下的时间复杂度为O(n)。
-    //但如果我们每次选择的基准都是最大或最小的元素，那么我们就需要遍历所有的元素，所以最坏情况下的时间复杂度为O(n^2)。
-    //    空间复杂度：O(1)，这是因为我们只需要常数级别的额外空间。
-    public int findKthLargest (int[] nums, int k) {
-        int n = nums.length;
-        int p = quickSelect(nums, 0, n - 1, n - k + 1);
-        return nums[p];
-    }
-
-    // 此处的 k 是按从小到大排的顺序
-    // return the index of the kth smallest number
-    private int quickSelect (int[] nums, int lo, int hi, int k) {
-        int i = lo;
-        int j = hi;
-        int pivot = nums[hi];
-        // < pivot 放左边
-        // >= pivot 放右边
-        while (i < j) {
-            if (nums[i++] > pivot) swap(nums, --i, --j);
-        }
-        swap(nums, i, hi); // 将 pivot 放入正确位置
-
-        // 计算 pivot 在数组中的位置
-        int m = i - lo + 1;
-
-        if (m == k) return i;
-        else if (m > k) return quickSelect(nums, lo, i - 1, k);
-        else return quickSelect(nums, i + 1, hi, k - m);
     }
 }
