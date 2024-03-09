@@ -12,7 +12,6 @@ import java.util.Random;
  */
 public class _912_排序数组_快速排序_双路快排 {
     private final static Random random = new Random(System.currentTimeMillis());
-
     public int[] sortArray(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
         return nums;
@@ -47,11 +46,9 @@ public class _912_排序数组_快速排序_双路快排 {
             while (le <= ge && nums[ge] > pivot) {
                 ge--;
             }
-
             // le 来到了第一个大于等于 pivot 的位置
             // ge 来到了第一个小于等于 pivot 的位置
-
-            if (le >= ge) {
+            if (le >= ge) {//相等的情况并且等于pivot，可以终止本次循环
                 break;
             }
             swap(nums, le, ge);
@@ -59,7 +56,7 @@ public class _912_排序数组_快速排序_双路快排 {
             ge--;
         }
 
-        swap(nums, left, ge);
+        swap(nums, left, ge);//
         return ge;
     }
 
