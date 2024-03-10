@@ -19,6 +19,7 @@ import java.util.Set;
 输入: pattern = "aaaa", s = "dog cat cat dog"
 输出: false
  */
+//这里有一个小小的坑，就是当测试用例是：String pattern = "abba";String str = "dog dog dog dog";的时候，我们须要判断出结果是 false。
 public class _290_单词规律 {
     public boolean wordPattern(String pattern, String str) {
         int patternLength = pattern.length();

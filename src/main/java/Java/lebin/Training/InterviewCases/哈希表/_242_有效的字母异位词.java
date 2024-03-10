@@ -1,5 +1,9 @@
 package Java.lebin.Training.InterviewCases.哈希表;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 242. 有效的字母异位词
  给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
@@ -26,5 +30,54 @@ public class _242_有效的字母异位词 {
 			}
 		}
 		return true;                        // record数组所有元素都为零0，说明字符串s和t是字母异位词
+	}
+
+	//方法一
+	//把两个字符串都转换成字符数组以后，进行排序，然后逐位进行比较。
+	public boolean isAnagram2(String s, String t) {
+		boolean isAnagram = true;
+		if (s.length() != t.length()) {
+			isAnagram = false;
+		} else {
+			char[] sArray = s.toCharArray();
+			Arrays.sort(sArray);
+			char[] tArray = t.toCharArray();
+			Arrays.sort(tArray);
+			for (int i = 0; i < sArray.length; i++) {
+				if (sArray[i] != tArray[i]) {
+					isAnagram = false;
+					break;
+				}
+			}
+		}
+		return isAnagram;
+	}
+	//放入一个 Map 中，只要后面有一个元素不出现在 Map 中，就退出，最后应该使得这个 Map 里所有元素的 value 值都为 0。
+	public boolean isAnagram3(String s, String t) {
+		boolean isAnagram = true;
+		if (s.length() != t.length()) {
+			isAnagram = false;
+		} else {
+			char[] sArray = s.toCharArray();
+			Map<Character, Integer> map1 = new HashMap<>();
+			for (char c : sArray) {
+				if (map1.containsKey(c)) {
+					map1.put(c, map1.get(c) + 1);
+				} else {
+					map1.put(c, 1);
+				}
+			}
+
+			char[] tArray = t.toCharArray();
+			for (char c : tArray) {
+				if (map1.containsKey(c) && map1.get(c) >= 1) {
+					map1.put(c, map1.get(c) - 1);
+				} else {
+					isAnagram = false;
+					break;
+				}
+			}
+		}
+		return isAnagram;
 	}
 }

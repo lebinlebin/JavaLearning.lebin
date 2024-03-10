@@ -8,8 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * https://leetcode-cn.com/problems/subtree-of-another-tree/
- * 
+ *
  * 前序遍历方法
  */
 public class _37_剑指Offer_序列化二叉树_preorder {

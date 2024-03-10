@@ -11,10 +11,6 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 输出：3
 解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
      由于研究者有3篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3 。
-示例 2：
-输入：citations = [1,2,100]
-输出：2
-
  */
 //理解题意
 // 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
@@ -38,7 +34,7 @@ h 指数是 论文数量，不是引用次数。
 public class _275_H指数2 {
     public int hIndex(int[] citations) {
         int len = citations.length;
-        Arrays.sort(citations);
+//        Arrays.sort(citations);//因为已经排好序了所以这里不用排序了
 
         // 特殊判断
         if (citations[len - 1] == 0) {

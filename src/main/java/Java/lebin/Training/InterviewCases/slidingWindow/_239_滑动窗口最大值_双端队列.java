@@ -26,8 +26,11 @@ import java.util.LinkedList;
  *  1  3  -1  -3  5 [3  6  7]      7
  * 单调队列
  */
-public class _239_滑动窗口最大值_单调队列_双端队列 {
+//时间复杂度：O(n)，其中 n 是数组 nums 的长度。每一个下标恰好被放入队列一次，并且最多被弹出队列一次，因此时间复杂度为 O(n)。
+//空间复杂度：O(k)。我们使用的数据结构是双向的，因此「不断从队首弹出元素」保证了队列中最多不会有超过 k+1 个元素，因此队列使用的空间为 O(k)
+public class _239_滑动窗口最大值_双端队列 {
 	//单调队列实现(双向队列)   掌握  维护队列连单调递增和点掉递减
+	//“滑动窗口”存放的是数组的索引值。
 	public int[] maxSlidingWindow_deque(int[] nums, int k) {
 		if (nums == null || nums.length == 0 || k < 1) return new int[0];
 		if (k == 1) return nums;
@@ -66,40 +69,4 @@ public class _239_滑动窗口最大值_单调队列_双端队列 {
 
 		return maxes;
 	}
-
-
-//    public int[] maxSlidingWindow(int[] nums, int k) {
-//    	if (nums == null || nums.length == 0 || k < 1) return new int[0];//leetcode要求的
-//    	if (k == 1) return nums;
-//
-//    	//存放窗口内最大值的数组。长度为原始数组长度减去窗口大小+1
-//    	int[] maxes = new int[nums.length - k + 1];
-//
-//    	// 当前滑动窗口的最大值索引
-//    	int maxIdx = 0;
-//    	// 求出前k个元素的最大值索引
-//    	for (int i = 1; i < k; i++) {
-//			if (nums[i] > nums[maxIdx])  maxIdx = i;
-//		}
-//
-//    	// li是滑动窗口的最左索引
-//    	for (int li = 0; li < maxes.length; li++) {
-//    		// ri是滑动窗口的最右索引
-//			int ri = li + k - 1;
-//			if (maxIdx < li) { // 最大值的索引不在滑动窗口的合理范围内
-//				// 求出[li, ri]范围内最大值的索引
-//				maxIdx = li;
-//				//求出窗口最大值的索引
-//				for (int i = li + 1; i <= ri; i++) {
-//					if (nums[i] > nums[maxIdx]) maxIdx = i;
-//				}
-//			//	最大值索引在滑动窗口内。只考虑新加入的元素即可
-//			} else if (nums[ri] >= nums[maxIdx]) { // 最大值的索引在滑动窗口的合理范围内.只排查新加入的元素即可
-//				maxIdx = ri;
-//			}
-//			maxes[li] = nums[maxIdx];
-//		}
-//
-//    	return maxes;
-//    }
 }

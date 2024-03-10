@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.哈希表;
 
 import java.util.Arrays;
 import java.util.HashSet;

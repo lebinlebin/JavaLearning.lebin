@@ -1,7 +1,9 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.哈希表;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /*
 给你一个长度为 n 的整数数组 nums ，其中 nums 的所有整数都在范围 [1, n] 内，且每个整数出现 一次 或 两次 。
@@ -10,7 +12,7 @@ import java.util.List;
  */
 //时间复杂度：O(n) 每一次交换操作会使得至少一个元素被交换到对应的正确位置，因此交换的次数为 O(n)，总时间复杂度为 O(n)。
 //空间复杂度：O(1)
-public class _442_数组中重复的数据 {
+public class _442_数组中重复的数据_找出出现两次整数 {
     /*
     将数组视为哈希表
     由于给定的 n 个数都在 [1,n]的范围内，如果有数字出现了两次，就意味着 [1,n] 中有数字没有出现过。
