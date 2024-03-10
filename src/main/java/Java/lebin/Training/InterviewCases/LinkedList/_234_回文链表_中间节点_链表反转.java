@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  */
 //时间复杂度：O(n)，其中 n 指的是链表的大小。
 //空间复杂度：O(1)。
-public class _0234_回文链表_中间节点_链表反转 {
+public class _234_回文链表_中间节点_链表反转 {
     public boolean isPalindrome(ListNode head) {
     	if (head == null || head.next == null) return true;
     	if (head.next.next == null) return head.val == head.next.val;
@@ -82,7 +82,7 @@ public class _0234_回文链表_中间节点_链表反转 {
 //		head.next.next.next.next = new ListNode(1);
 		System.out.println(head);
 		
-		_0234_回文链表_中间节点_链表反转 obj = new _0234_回文链表_中间节点_链表反转();
+		_234_回文链表_中间节点_链表反转 obj = new _234_回文链表_中间节点_链表反转();
 		obj.isPalindrome(head);
 		
 		System.out.println(head);

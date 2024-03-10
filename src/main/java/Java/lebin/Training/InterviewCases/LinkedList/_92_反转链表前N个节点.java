@@ -10,6 +10,8 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  输入：head = [5], left = 1, right = 1
  输出：[5]
  */
+//时间复杂度：O(N)，其中 N 是链表总节点数。最多只遍历了链表一次，就完成了反转。
+//空间复杂度：O(1)。只使用到常数个变量。
 public class _92_反转链表前N个节点 {
 	ListNode successor = null;
 

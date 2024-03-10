@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  */
 //时间复杂度: O(n)，其中 n 是原链表的长度。
 //空间复杂度: O(1)。
-public class _0086_分隔链表 {
+public class _86_分隔链表 {
 	public ListNode partition(ListNode head, int x) {
 		if (head == null) return null;
 		ListNode lHead = new ListNode(0);

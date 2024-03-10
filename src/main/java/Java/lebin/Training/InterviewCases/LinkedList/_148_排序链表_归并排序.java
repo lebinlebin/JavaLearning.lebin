@@ -9,7 +9,7 @@ package Java.lebin.Training.InterviewCases.LinkedList;
  * 输入：head = [4,2,1,3]
  * 输出：[1,2,3,4]
  */
-public class _148_排序链表 {
+public class _148_排序链表_归并排序 {
 //	时间复杂度：O(nlogn)，其中 n 是链表的长度。
 //	空间复杂度：O(1)。
 //  自底向上归并排序
