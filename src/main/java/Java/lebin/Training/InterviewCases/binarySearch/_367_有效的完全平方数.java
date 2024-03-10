@@ -15,7 +15,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 解释：返回 false ，因为 3.742 * 3.742 = 14 但 3.742 不是一个整数。
  */
 public class _367_有效的完全平方数 {
-//方法三：二分查找
+//二分查找
 //    时间复杂度：O(logn)，其中 n 为正整数 num 的最大值。
 //    空间复杂度：O(1)
     public boolean isPerfectSquare(int num) {
