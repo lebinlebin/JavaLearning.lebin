@@ -2,6 +2,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 
 /**
  * 33. 搜索旋转排序数组的具体值
+ * 整数数组 nums 按升序排列，数组中的值 互不相同 。
  * 示例 1：
  * 输入：nums = [4,5,6,7,0,1,2], target = 0
  * 输出：4
@@ -11,8 +12,8 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  */
 //时间复杂度:O(logn),其中 n 为nums 数组的大小。
 // 空间复杂度: O(1) ,我们只需要常数级别的空间存放变量。
-//字节一面
-public class _33_搜索旋转排序数组的某个具体值 {
+//字节一面 todo:数组中的值互不相同
+public class _33_搜索旋转排序数组_搜索某具体值 {
 	public int search(int[] nums, int target) {
 		int n = nums.length;
 		if (n == 0) { return -1; }

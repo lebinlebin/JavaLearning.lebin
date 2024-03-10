@@ -21,7 +21,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
 时间复杂度：O(n)，其中 n 是数组 nums的长度。
 空间复杂度：O(1)。
  */
-public class _162_寻找峰值 {
+public class _162_寻找峰值_二分查找 {
     //只要数组中存在一个元素比相邻元素大，那么沿着它一定可以找到一个峰值
     //二分查找优化 时间复杂度：O(logN)
     public int findPeakElement(int[] nums) {
@@ -36,15 +36,4 @@ public class _162_寻找峰值 {
         }
         return left;
     }
-
-    public int findPeakElement2(int[] nums) {
-        int idx = 0;
-        for (int i = 1; i < nums.length; ++i) {
-            if (nums[i] > nums[idx]) {
-                idx = i;
-            }
-        }
-        return idx;
-    }
-    //
 }
