@@ -22,7 +22,7 @@ import java.util.Map;
 时间复杂度：O(n^2)。使用了两重循环，时间复杂度均为O(n2)。总时间复杂度为O(n2)。
 空间复杂度：O(n2)，即为哈希映射需要使用的空间。在最坏的情况下，A[i]+B[j] 的值均不相同，因此值的个数为 n^2。
  */
-public class _454_四数相加 {
+public class _454_四数相加2 {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         Map<Integer, Integer> map = new HashMap<>();
         int temp;
