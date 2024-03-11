@@ -17,7 +17,7 @@ import java.util.List;
 输出：[1,2]
 
  */
-public class _229_多数元素2 {
+public class _229_多数元素超过三分之一的元素2 {
     //时间复杂度：O(n)
     //空间复杂度：O(n)
     public List<Integer> majorityElement(int[] nums) {

@@ -10,7 +10,7 @@ import java.util.Map;
  */
 //时间复杂度：O(nlogn)  将数组排序的时间复杂度为O(nlogn)。
 //空间复杂度：O(logn)。如果使用语言自带的排序算法，需要使用 O(logn) 的栈空间。如果自己编写堆排序，则只需要使用 O(1) 的额外空间。
-public class _169_多数元素 {
+public class _169_多数元素_超过一半的元素 {
     public int majorityElement(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length/2];
