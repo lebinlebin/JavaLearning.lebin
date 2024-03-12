@@ -18,7 +18,7 @@ package Java.lebin.Training.InterviewCases.characterString;
 生成next数组，时间复杂度是O(m)。所以整个KMP算法的时间复杂度是O(n+m)的。
 暴力的解法显而易见是O(n × m)，所以KMP在字符串匹配中极大地提高了搜索的效率。
  */
-public class _28_KMP找出字符串中第一个匹配项的下标 {
+public class _28_找出字符串中第一个匹配项的下标_kmp {
 	/**
 	 * 基于窗口滑动的算法
 	 * 时间复杂度：O(m*n)
