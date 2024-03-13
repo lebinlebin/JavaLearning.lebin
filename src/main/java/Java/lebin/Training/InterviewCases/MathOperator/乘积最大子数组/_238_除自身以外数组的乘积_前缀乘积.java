@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.MathOperator.乘积最大子数组;
 /*
 给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。
 题目数据 保证 数组 nums之中任意元素的全部前缀元素和后缀的乘积都在  32 位 整数范围内。
@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  */
 //时间复杂度 O(N) ： 其中 N 为数组长度，两轮遍历数组 nums ，使用 O(N) 时间。
 //空间复杂度 O(1) ： 变量 tmp 使用常数大小额外空间（数组 ans作为返回值，不计入复杂度考虑）。
-public class _238_除自身以外数组的乘积 {
+public class _238_除自身以外数组的乘积_前缀乘积 {
     /*
     时间复杂度：O(N)，其中 N 指的是数组 nums 的大小。预处理 L 和 R 数组以及最后的遍历计算都是 O(N)的时间复杂度。
     空间复杂度：O(N)，其中 N 指的是数组 nums 的大小。使用了 L 和 R 数组去构造答案，L 和 R 数组的长度为数组 nums 的大小。
