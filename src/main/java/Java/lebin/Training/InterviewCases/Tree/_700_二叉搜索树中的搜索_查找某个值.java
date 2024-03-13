@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.Tree.二叉搜索树;
+package Java.lebin.Training.InterviewCases.Tree;
 
 
 /**

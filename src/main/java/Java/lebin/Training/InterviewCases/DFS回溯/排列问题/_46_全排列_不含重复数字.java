@@ -5,12 +5,10 @@ import java.util.List;
 
 /**
  46. 全排列
- 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
-
-
+ 给定一个 todo:不含重复数字的数组 nums ，
+ 返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
 
  示例 1：
-
  输入：nums = [1,2,3]
  输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
  示例 2：
@@ -22,7 +20,7 @@ import java.util.List;
  输入：nums = [1]
  输出：[[1]]
  */
-public class _46_全排列 {
+public class _46_全排列_不含重复数字 {
     List<List<Integer>> res = new LinkedList<>();
     public List<List<Integer>> permute(int[] nums) {
         //记录路径

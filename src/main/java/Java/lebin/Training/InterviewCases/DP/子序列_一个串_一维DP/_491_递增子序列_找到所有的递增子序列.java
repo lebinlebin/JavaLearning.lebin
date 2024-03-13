@@ -13,7 +13,7 @@ import java.util.List;
  */
 //时间复杂度: O(n * 2^n)
 //空间复杂度: O(n)
-public class _491_递增子序列 {
+public class _491_递增子序列_找到所有的递增子序列 {
     List<List<Integer>> result = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
     public List<List<Integer>> findSubsequences(int[] nums) {

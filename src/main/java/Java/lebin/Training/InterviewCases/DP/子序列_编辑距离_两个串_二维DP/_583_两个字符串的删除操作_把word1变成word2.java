@@ -28,7 +28,7 @@ package Java.lebin.Training.InterviewCases.DP.子序列_编辑距离_两个串_�
  */
 //时间复杂度: O(n * m)
 // 空间复杂度: O(n * m)
-public class _583_两个字符串的删除操作 {
+public class _583_两个字符串的删除操作_把word1变成word2 {
     public int minDistance(String word1, String word2) {
         int[][] dp = new int[word1.length() + 1][word2.length() + 1];
         for (int i = 0; i < word1.length() + 1; i++) dp[i][0] = i;

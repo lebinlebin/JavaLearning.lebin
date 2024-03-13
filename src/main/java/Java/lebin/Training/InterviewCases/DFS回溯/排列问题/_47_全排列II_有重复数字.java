@@ -25,7 +25,7 @@ import java.util.List;
  * 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
  *
  */
-public class _47_全排列II {
+public class _47_全排列II_有重复数字 {
     boolean[] used;//与nums大小相同的数组，记录当前数字是否被用过了
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();//记录最终返回
