@@ -15,15 +15,13 @@ package Java.lebin.Training.InterviewCases.DFS回溯.分割问题分割回文串
 输入：s = "ab"
 输出：1
  */
-public class _132_分割回文串2 {
+public class _132_分割回文串2_最少分割次数 {
     //给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是回文。
     //返回符合要求的 最少分割次数 。
     /*
-    步骤 1：思考状态
-状态就尝试定义成题目问的那样，看看状态转移方程是否容易得到。
+步骤 1：状态
 dp[i]：表示前缀子串 s[0:i] 分割成若干个回文子串所需要最小分割次数。
-
-步骤 2：思考状态转移方程
+步骤 2：状态转移
 思考的方向是：大问题的最优解怎么由小问题的最优解得到。
 即 dp[i] 如何与 dp[i - 1]、dp[i - 2]、...、dp[0] 建立联系。
 比较容易想到的是：如果 s[0:i] 本身就是一个回文串，那么不用分割，即 dp[i] = 0 ，这是首先可以判断的，否则就需要去遍历；
@@ -34,20 +32,24 @@ dp[i]：表示前缀子串 s[0:i] 分割成若干个回文子串所需要最小�
 
 得到状态转移方程如下：dp[i] = min([dp[j] + 1 for j in range(i) if s[j + 1, i] 是回文])
      */
+    /*
+    时间复杂度：O(n^2)，
+    空间复杂度：O(n)
+     */
     public int minCut(String s) {
         int len = s.length();
         if (len < 2) {
             return 0;
         }
-
+        //dp[i]：表示前缀子串 s[0:i] 分割成若干个回文子串所需要最小分割次数。
         int[] dp = new int[len];
         for (int i = 0; i < len; i++) {
-            dp[i] = i;
+            dp[i] = i;//默认每个字符一个分割
         }
 
         for (int i = 1; i < len; i++) {
-            if (checkPalindrome(s, 0, i)) {
-                dp[i] = 0;
+            if (checkPalindrome(s, 0, i)) {//剪枝
+                dp[i] = 0;//s[0:i]已经是回文串不需要进行切分
                 continue;
             }
             // 当 j == i 成立的时候，s[i] 就一个字符，一定是回文
@@ -71,6 +73,7 @@ dp[i]：表示前缀子串 s[0:i] 分割成若干个回文子串所需要最小�
         }
         return true;
     }
+
     /*
     动态规划（优化）
     上面判断回文串的时候方法 checkPalindrome() 是线性的，时间复杂度为 O(N)。
