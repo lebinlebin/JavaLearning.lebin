@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.MathOperator;
+package Java.lebin.Training.InterviewCases.MathOperator.丑数;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

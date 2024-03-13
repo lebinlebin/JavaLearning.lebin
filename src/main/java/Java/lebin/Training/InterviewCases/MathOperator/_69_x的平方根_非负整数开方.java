@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.MathOperator;
  */
 //时间复杂度：O(logx)，即为二分查找需要的次数。
 // 空间复杂度：O(1)。
-public class _69_x的平方根 {
+public class _69_x的平方根_非负整数开方 {
     public int mySqrt(int x) {
         int l = 0, r = x, ans = -1;
         while (l <= r) {

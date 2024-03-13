@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.MathOperator;
+package Java.lebin.Training.InterviewCases.MathOperator.基本计算器;
 
 import Java.lebin.Training.DSA._03_Stack.Stack;
 
@@ -26,7 +26,7 @@ import java.util.LinkedList;
 时间复杂度：O(n)，其中 n 为字符串 s 的长度。需要遍历字符串 s 一次，计算表达式的值。
 空间复杂度：O(n)，其中 n 为字符串 s 的长度。空间复杂度主要取决于栈的空间，栈中的元素数量不超过 n。
  */
-public class _224_基本计算器 {
+public class _224_基本计算器_数组括号加减没有乘除 {
     public static int calculate(String s) {
         Stack<Integer> st = new Stack<>();  // 存放每一层的符号，一个括号表示一层
         int sign = 1;   // 值为1或-1，表示当前数的符号

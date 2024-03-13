@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.MathOperator;
+package Java.lebin.Training.InterviewCases.MathOperator.丑数;
 /*
 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
 给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。

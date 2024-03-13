@@ -1,6 +1,6 @@
 package Java.lebin.Training.InterviewCases.MathOperator;
 /*
-给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
+给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a^2 + b^2 = c 。
 示例 1：
 输入：c = 5
 输出：true
@@ -13,7 +13,7 @@ package Java.lebin.Training.InterviewCases.MathOperator;
 时间复杂度：O(sqrt(c))。枚举 a 的时间复杂度为O(sqrt(c))，对于每个 a 的值，可在 O(1) 的时间内寻找 b。
  空间复杂度：O(1)。
  */
-public class _633_平方数之和 {
+public class _633_平方数之和_整数是否可以拆分为平方数之和 {
     //方法一：使用 sqrt函数
     public boolean judgeSquareSum(int c) {
         for (long a = 0; a * a <= c; a++) {

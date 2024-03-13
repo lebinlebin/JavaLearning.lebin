@@ -10,7 +10,7 @@ package Java.lebin.Training.InterviewCases.MathOperator;
  */
 //时间复杂度：O(log∣x∣)。翻转的次数即 x 十进制的位数。
 //空间复杂度：O(1)。
-public class _7_整数反转 {
+public class _7_整数反转_123_321 {
 	public int reverse(int x) {
 		long res = 0;
 		while (x != 0) {

@@ -8,7 +8,7 @@ package Java.lebin.Training.InterviewCases.MathOperator;
 输入: num = -7
 输出: "-10"
  */
-public class _504_七进制数 {
+public class _504_七进制数_整数转为7进制数以字符输出 {
     public String convertToBase7(int num) {
         if (num == 0) {
             return "0";

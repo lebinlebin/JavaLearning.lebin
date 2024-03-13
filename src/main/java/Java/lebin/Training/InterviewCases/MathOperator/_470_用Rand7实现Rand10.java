@@ -22,6 +22,7 @@ public class _470_用Rand7实现Rand10 {
         return 1 + ans % 10;
     }
 
+    //=====================================================================
     //用rand5生成rand7
     //rand5()  1-5
     // rand5()-1  0-4
@@ -43,14 +44,4 @@ public class _470_用Rand7实现Rand10 {
         int result = rand.nextInt(5)+1;//0~4 +1  = 1~5
         return result;
     }
-
-//    //用rand7生成rand5
-//    public int rand5byRand7() {
-//    Random rand =new Random();
-//    int result = rand.nextInt(7)+1;//0~6 +1  = 1~7
-//    while (result > 5){
-//        result = rand.nextInt(7)+1;
-//    }
-//    return result;
-//    }
 }

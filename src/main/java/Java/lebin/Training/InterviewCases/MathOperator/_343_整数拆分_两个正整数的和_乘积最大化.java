@@ -14,7 +14,7 @@ package Java.lebin.Training.InterviewCases.MathOperator;
  */
 //时间复杂度：O(n)
 //空间复杂度：O(1)
-public class _343_整数拆分 {
+public class _343_整数拆分_两个正整数的和_乘积最大化 {
 	public int integerBreak(int n) {
 		//dp[i]：分拆数字i，可以得到的最大乘积为dp[i]。
 		int[] dp = new int[n+1];

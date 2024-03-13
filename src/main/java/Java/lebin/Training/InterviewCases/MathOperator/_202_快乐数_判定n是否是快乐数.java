@@ -25,7 +25,7 @@ import java.util.Set;
  */
 //时间复杂度 O(logn)
 //空间复杂度 O(logn)//具体计算逻辑需要去查
-public class _202_快乐数 {
+public class _202_快乐数_判定n是否是快乐数 {
     public boolean isHappy(int n) {
         Set<Integer> record = new HashSet<>();
         while (n != 1 && !record.contains(n)) {

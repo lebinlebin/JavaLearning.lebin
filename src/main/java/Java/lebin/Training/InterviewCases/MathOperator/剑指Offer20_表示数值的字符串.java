@@ -2,7 +2,6 @@ package Java.lebin.Training.InterviewCases.MathOperator;
 
 /**
  剑指 Offer 20. 表示数值的字符串
-
  首先定义了四个flag，对应四种字符
  是否有数字：hasNum
  是否有e：hasE
