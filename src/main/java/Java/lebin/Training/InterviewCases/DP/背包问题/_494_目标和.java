@@ -1,7 +1,7 @@
 package Java.lebin.Training.InterviewCases.DP.背包问题;
 /*
 494.目标和
-给定一个非负整数数组，a1, a2, ..., an, 和一个目标数，S。
+给定一个非负整数数组，a1, a2, ..., an, 和一个目标数 S。
 现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。
 返回可以使最终数组和为目标数 S 的所有添加符号的方法数。
 示例：
@@ -11,8 +11,9 @@ package Java.lebin.Training.InterviewCases.DP.背包问题;
 //todo:
 // 加法一个集合和为left，减法一个集合和为right；left + right =sum(所有元素之和)；left-right=target；right=sum-left；
 // left = target+ right = target + sum-left；==> 2left-sum = target;其中sum和target都是固定的数
-// left = (target+sum)/2 例如: nums: [1, 1, 1, 1, 1], S: 3   taregt=3  sum=5,那么left=(3+5)/2=4，对于不能整除的情况，说明不能凑成这样的一个加法集合，返回0
-// 要凑一个4的容量的背包，组成加法集合的种树。就能找到题目要求的所有组合
+// left = (target+sum)/2 例如: nums: [1, 1, 1, 1, 1], S: 3   taregt=3  sum=5,那么left=(3+5)/2=4，
+// 对于不能整除的情况，说明不能凑成这样的一个加法集合，返回0
+// 要凑一个4的容量的背包，组成加法集合的种数。就能找到题目要求的所有组合
 //
 /*
 1. dp定义
@@ -31,7 +32,6 @@ package Java.lebin.Training.InterviewCases.DP.背包问题;
     所以求组合类问题的公式，都是类似这种：
         dp[j] += dp[j - nums[i]]
     这个公式在后面在讲解背包解决排列组合问题的时候还会用到！
-
 3.初始化
     候dp[0] 一定要初始化为1，因为dp[0]是在公式中一切递推结果的起源，如果dp[0]是0的话，递推结果将都是0。
 4. 遍历顺序
@@ -42,10 +42,14 @@ public class _494_目标和 {
     //空间复杂度：O(m)，m为背包容量
     public int findTargetSumWays1D(int[] nums, int target) {
         int sum = 0;
-        for (int i = 0; i < nums.length; i++) sum += nums[i];
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
         //如果target过大 sum将无法满足
         if ( target < 0 && sum < -target) return 0;
+
         if ((target + sum) % 2 != 0) return 0;
+
         int size = (target + sum) / 2;
         if(size < 0) size = -size;
         int[] dp = new int[size + 1];

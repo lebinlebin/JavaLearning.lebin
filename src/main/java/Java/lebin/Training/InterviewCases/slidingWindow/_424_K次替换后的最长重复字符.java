@@ -18,7 +18,7 @@ package Java.lebin.Training.InterviewCases.slidingWindow;
 //滑动窗口
 //时间复杂度：O(N)，这里 N 是输入字符串 S 的长度；
 //空间复杂度：O(A)，这里 A 是输入字符串 S 出现的字符 ASCII 值的范围
-public class _424_替换后的最长重复字符_滑动窗口 {
+public class _424_K次替换后的最长重复字符 {
     public int characterReplacement(String s, int k) {
         int len = s.length();
         if (len < 2) {

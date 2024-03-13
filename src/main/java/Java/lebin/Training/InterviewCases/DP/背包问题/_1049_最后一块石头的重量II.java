@@ -48,6 +48,7 @@ public class _1049_最后一块石头的重量II {
         int target = sum >> 1;
         //初始化dp数组
         int[] dp = new int[target + 1];
+
         for (int i = 0; i < stones.length; i++) {
             //采用倒序
             for (int j = target; j >= stones[i]; j--) {
@@ -57,7 +58,9 @@ public class _1049_最后一块石头的重量II {
         }
         return sum - 2 * dp[target];
     }
-    //
+
+    //时间复杂度：O(m * n) , m是⽯头总重量（准确的说是总重量的⼀半），n为⽯头块数
+    //空间复杂度：O(m * n)
     public int lastStoneWeightII2D(int[] stones) {
         int sum = 0;
         for (int s : stones) {

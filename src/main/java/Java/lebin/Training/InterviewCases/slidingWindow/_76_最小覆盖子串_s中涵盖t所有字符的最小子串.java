@@ -15,7 +15,7 @@ import java.util.Map;
 // 因为我们先用 for 循环遍历了字符串 T 来初始化 needs，时间 O(N)，之后的两个 while 循环最多执行 2M 次，时间 O(M)。
 //读者也许认为嵌套的 while 循环复杂度应该是平方级，但是你这样想，while 执行的次数就是双指针 left 和 right 走的总路程，最多是 2M 嘛。
 //空间复杂度 O(M+N)
-public class _76_最小覆盖子串 {
+public class _76_最小覆盖子串_s中涵盖t所有字符的最小子串 {
 	private Map<Character, Integer> targetMap;
 	private Map<Character, Integer> curMap;
 

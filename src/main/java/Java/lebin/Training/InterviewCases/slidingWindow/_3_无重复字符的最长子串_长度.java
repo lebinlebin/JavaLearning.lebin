@@ -15,7 +15,7 @@ import java.util.Map;
 //空间复杂度：O(∣Σ∣)，其中 Σ 表示字符集（即字符串中可以出现的字符）
 //在本题中没有明确说明字符集，因此可以默认为所有 ASCII 码在 [0,128) 内的字符，即 ∣Σ∣=128。
 // 我们需要用到哈希集合来存储出现过的字符，而字符最多有 ∣Σ∣ 个，因此空间复杂度为O(∣Σ∣)。
-public class _3_无重复字符的最长子串 {
+public class _3_无重复字符的最长子串_长度 {
 
 	public static int lengthOfLongestSubstring(String s) {
 		//本题两个Map是统一的。只有一个string

@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 //参考:https://lfool.github.io/LFool-Notes/algorithm/%E7%BB%8F%E5%85%B8%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%EF%BC%9A%E9%9B%86%E5%90%88%E5%88%92%E5%88%86%E9%97%AE%E9%A2%98.html
 //时间复杂度为 O(k^n)
-public class _698_划分为k个相等的子集 {
+public class _698_划分为k个相等的子集_回溯 {
     public boolean canPartitionKSubsets(int[] nums, int k) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) sum += nums[i];
@@ -52,6 +52,8 @@ public class _698_划分为k个相等的子集 {
         // k 个桶都不满足要求
         return false;
     }
+
+
     //如果我们让nums[]内的元素递减排序，先让值大的元素选择桶，这样可以增加剪枝的命中率，从而降低回溯的概率
     // 剪枝：放入球后超过 target 的值，选择一下桶
     //if (bucket[i] + nums[index] > target) continue;

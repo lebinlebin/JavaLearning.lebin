@@ -35,7 +35,9 @@ import java.util.Arrays;
 4. 确定遍历顺序
 	在动态规划：关于01背包问题，如果使用一维dp数组，物品遍历的for循环放在外层，遍历背包的for循环放在内层，且内层for循环倒序遍历！
  */
-public class _416_分割等和子集 {
+public class _416_分割等和子集_蚂蚁一面 {
+	//时间复杂度：O(n^2)
+	//空间复杂度：O(n)，虽然dp数组⼤⼩为⼀个常数，但是⼤常数
 	public static boolean canPartition(int[] nums) {
 		if(nums == null || nums.length == 0) return false;
 		int n = nums.length;
@@ -45,7 +47,7 @@ public class _416_分割等和子集 {
 		}
 		//总和为奇数，不能平分
 		if(sum % 2 != 0) return false;
-		int target = sum / 2;
+		int target = sum / 2;//容量最大值
 		int[] dp = new int[target + 1];
 		for(int i = 0; i < n; i++) {
 			for(int j = target; j >= nums[i]; j--) {
@@ -60,7 +62,6 @@ public class _416_分割等和子集 {
 	}
 	public static void main(String[] args) {
 		int num[] = {1,5,11,5};
-
 		System.out.println(canPartition(num));
 	}
 }

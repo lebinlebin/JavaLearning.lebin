@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.slidingWindow;
 解释：[0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
 粗体数字从 0 翻转到 1，最长的子数组长度为 10。
  */
-public class _1004_最大连续1的个数III {
+public class _1004_翻转k个0_最大连续1的最大个数III {
     public int longestOnes(int[] nums, int k) {
         int n = nums.length;
         int left = 0, lsum = 0, rsum = 0;

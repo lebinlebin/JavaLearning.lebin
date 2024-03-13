@@ -25,7 +25,8 @@ import java.util.Stack;
  */
 //时间复杂度：O(n)
 //空间复杂度：O(n)
-public class _496_下一个更大元素_单调栈 {
+//维持栈是单调递减
+public class _496_下一个更大元素_无重复元素 {
 	//nums1是nums2的子集
 	public int[] nextGreaterElement(int[] nums1, int[] nums2) {
 		if(null == nums2|| null == nums1) return null;
