@@ -9,7 +9,7 @@ import java.util.*;
  */
 //时间复杂度: O(n * 2^n)
 //空间复杂度: O(n)
-public class _77_组合 {
+public class _77_组合_给定n和k返回1_n中所有可能的k个数的组合 {
     List<List<Integer>> res = new LinkedList<>();
     public List<List<Integer>> combine(int n, int k) {
         LinkedList<Integer> track = new LinkedList<>();

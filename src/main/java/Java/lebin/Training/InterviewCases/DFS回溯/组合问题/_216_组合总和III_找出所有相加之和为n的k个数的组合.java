@@ -17,7 +17,7 @@ import java.util.List;
 //2. 回溯函数终止条件
 //3. 单层搜索的过程
 // 在集合[1,2,3,4,5,6,7,8,9]中求 k（个数）, 和为n的组合
-public class _216_组合总和III {
+public class _216_组合总和III_找出所有相加之和为n的k个数的组合 {
     //时间复杂度: O(n * 2^n)
     //空间复杂度: O(n)
     List<List<Integer>> result = new ArrayList<>();

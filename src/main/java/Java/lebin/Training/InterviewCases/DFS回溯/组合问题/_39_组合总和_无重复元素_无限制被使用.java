@@ -22,7 +22,7 @@ import java.util.List;
 输入: candidates = [2,3,5], target = 8
 输出: [[2,2,2,2],[2,3,3],[3,5]]
  */
-public class _39_组合总和_无限制被使用 {
+public class _39_组合总和_无重复元素_无限制被使用 {
     //时间复杂度: O(n * 2^n)，注意这只是复杂度的上界，因为剪枝的存在，真实的时间复杂度远小于此
     //空间复杂度: O(target)
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
