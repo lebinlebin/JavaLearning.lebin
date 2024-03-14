@@ -14,7 +14,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
 解释：13 = 4 + 9
  */
 //todo：完全平方数就是物品（可以无限件使用），凑个正整数n就是背包，问凑满这个背包最少有多少物品？
-public class _279_完全平方数 {
+public class _279_完全平方数_转化为背包问题 {
     /*
 1. dp定义
     dp[j]：和为j的完全平方数的最少数量为dp[j]

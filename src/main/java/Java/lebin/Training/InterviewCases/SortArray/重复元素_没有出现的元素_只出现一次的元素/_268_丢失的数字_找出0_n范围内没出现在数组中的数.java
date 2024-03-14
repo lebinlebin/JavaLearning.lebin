@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.SortArray.重复元素_没有出现的元素_只出现一次的元素;
 /*
 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
 
@@ -22,7 +22,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  */
 import java.util.Arrays;
 
-public class _268_丢失的数字 {
+public class _268_丢失的数字_找出0_n范围内没出现在数组中的数 {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         int n = nums.length;

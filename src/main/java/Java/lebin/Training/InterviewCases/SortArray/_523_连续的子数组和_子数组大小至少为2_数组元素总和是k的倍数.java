@@ -30,7 +30,7 @@ sum[j]−sum[i−1]=n∗k ==》 sum[j]/k-sum[i−1]/k=n
 使用 HashSet 来保存出现过的值。
 让循环从 2 开始枚举右端点（根据题目要求，子数组长度至少为 2），每次将符合长度要求的位置的取余结果存入 HashSet。
  */
-public class _523_连续的子数组和 {
+public class _523_连续的子数组和_子数组大小至少为2_数组元素总和是k的倍数 {
     //时间复杂度：O(n)
     //空间复杂度：O(n)
     public boolean checkSubarraySum(int[] nums, int k) {

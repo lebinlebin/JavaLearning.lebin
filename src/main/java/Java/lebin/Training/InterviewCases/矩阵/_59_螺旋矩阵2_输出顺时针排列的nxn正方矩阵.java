@@ -1,11 +1,11 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.矩阵;
 
 /**
  * 59. 螺旋矩阵 II
  * 给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
  * 示例 1：
  * 输入：n = 3
- * 输出：[[1,2,3],[8,9,4],[7,6,5]]
+ * 输出：
  * [[1,2,3],
  * [8,9,4],
  * [7,6,5]]
@@ -14,7 +14,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  * 输入：n = 1
  * 输出：[[1]]
  */
-public class _59_螺旋矩阵2 {
+public class _59_螺旋矩阵2_输出顺时针排列的nxn正方矩阵 {
     public int[][] generateMatrix(int n) {
         int loop = 0;  // 控制循环次数
         int[][] res = new int[n][n];

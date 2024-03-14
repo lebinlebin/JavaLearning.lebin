@@ -17,7 +17,7 @@ import java.util.PriorityQueue;
 输入：arr = [1,7], k = 1
 输出：[1,7]
  */
-public class _786_第K个最小的质数分数 {
+public class _786_第K个最小的质数分数_递增排序数组和整数k {
     /*
     复杂度分析
 时间复杂度：O(klogn)，其中 n 是数组 arr 的长度。优先队列的单次操作时间复杂度为 O(logn)，一共需要进行 O(k) 次操作。

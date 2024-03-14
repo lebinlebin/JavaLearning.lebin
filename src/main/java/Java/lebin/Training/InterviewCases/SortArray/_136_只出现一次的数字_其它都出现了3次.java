@@ -18,7 +18,7 @@ import java.util.Set;
 时间复杂度：O(n)，其中 n是数组长度。只需要对数组遍历一次。
 空间复杂度：O(1)
  */
-public class _136_只出现一次的数字 {
+public class _136_只出现一次的数字_其它都出现了3次 {
     public int singleNumber(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         //先把数字存储到map中，其中key存储的是当前数字，value是

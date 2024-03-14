@@ -4,7 +4,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  */
 //时间复杂度：O(mn)
 //空间复杂度：O(m+n)
-public class _73_矩阵置零 {
+public class _73_矩阵置零_如果元素为0则行和列元素都设为0 {
     public void setZeroes(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         boolean[] row = new boolean[m];

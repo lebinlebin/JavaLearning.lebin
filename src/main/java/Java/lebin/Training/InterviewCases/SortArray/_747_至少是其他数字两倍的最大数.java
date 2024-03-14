@@ -17,7 +17,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
 思路与算法
 遍历数组分别找到数组的最大值 m1 和次大值 m2。如果 m1≥m2 ×2 成立，则最大值至少是数组其余数字的两倍，此时返回最大值的下标，否则返回 −1。
  */
-//时间复杂度：O(N)，其中 NNN 是数组的长度。遍历整个数组需要 O(N)
+//时间复杂度：O(N)，其中 N 是数组的长度。遍历整个数组需要 O(N)
 //空间复杂度：O(1)。
 public class _747_至少是其他数字两倍的最大数 {
     public int dominantIndex(int[] nums) {

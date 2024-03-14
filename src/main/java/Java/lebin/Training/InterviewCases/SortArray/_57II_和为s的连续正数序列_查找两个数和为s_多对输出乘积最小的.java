@@ -31,7 +31,7 @@ a*b与（a+1）*（b-1）的关系怎么计算
 //   复杂度分析
 //   窗口只向右移动，左右边界最多移动 target/2次，所以整体时间复杂度为O(N)。
 //   空间复杂度：O(1)。
-public class 剑指Offer57II和为s的连续正数序列_多对输出乘积最小的 {
+public class _57II_和为s的连续正数序列_查找两个数和为s_多对输出乘积最小的 {
     public ArrayList<Integer> FindNumbersWithSum(int [] array,int sum) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         // 先判断特殊情况：数字少于两个时

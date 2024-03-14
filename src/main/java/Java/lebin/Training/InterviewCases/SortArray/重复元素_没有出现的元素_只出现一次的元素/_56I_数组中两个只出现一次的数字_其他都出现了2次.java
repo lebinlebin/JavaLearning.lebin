@@ -1,7 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
-
-import java.util.HashMap;
-import java.util.Map;
+package Java.lebin.Training.InterviewCases.SortArray.重复元素_没有出现的元素_只出现一次的元素;
 
 /**
  剑指 Offer 56 - I. 数组中数字出现的次数
@@ -14,7 +11,7 @@ import java.util.Map;
 位运算
 题目要求时间复杂度 O(N) ，空间复杂度 O(1)，因此首先排除 暴力法 和 哈希表统计法 。
 */
-public class _56I_数组中两个只出现一次的数字 {
+public class _56I_数组中两个只出现一次的数字_其他都出现了2次 {
     public int[] singleNumbers(int[] nums) {
         //相同的数字异或为0，任何数字与0异或结果是其本身。
         // 如果一个数组中其他数出现了两次，只有一个数出现了一次，直接全员异或得到的结果就是我们要求的

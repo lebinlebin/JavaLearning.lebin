@@ -14,7 +14,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  */
 //时间复杂度：O(n)，其中 n 是数组的长度。我们最多遍历该数组一次。
 //空间复杂度：O(1)。我们只需要常数的空间存储若干变量。
-public class _80_删除有序数组中的重复项2 {
+public class _80_删除有序数组中次数超过2的重复项2_超过两次的元素保留两次 {
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
         if (n <= 2) {

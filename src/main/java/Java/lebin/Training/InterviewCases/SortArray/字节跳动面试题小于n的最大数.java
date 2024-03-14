@@ -19,7 +19,7 @@ import java.util.Arrays;
 我想的很简单，就是一个回溯，每次选一个数，但是选的数的位数不能超过Target(比如target是9999四位数，
 那我最多选择四个数，否则五位数一定比四位数大)。然后每次选好了，只要比target小，我们就记录一下Max值就好啦。
  */
-public class 小于n的最大数 {
+public class 字节跳动面试题小于n的最大数 {
     public static int max = Integer.MIN_VALUE;
     public static int len ;
     public static int targetNum;

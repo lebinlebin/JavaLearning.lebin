@@ -13,7 +13,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
 时间复杂度：O(sqrt(c))。枚举 a 的时间复杂度为O(sqrt(c))，对于每个 a 的值，可在 O(1) 的时间内寻找 b。
  空间复杂度：O(1)。
  */
-public class _633_平方数之和 {
+public class _633_平方数之和_判定一个整数是否可以拆分为两个整数的平方和 {
     //方法一：使用 sqrt函数
     public boolean judgeSquareSum(int c) {
         for (long a = 0; a * a <= c; a++) {

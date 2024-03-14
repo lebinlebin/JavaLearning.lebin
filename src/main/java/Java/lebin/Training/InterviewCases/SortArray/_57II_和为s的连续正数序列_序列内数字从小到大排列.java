@@ -25,7 +25,7 @@ import java.util.List;
 窗口只向右移动，左右边界最多移动 target/2次，所以整体时间复杂度为O(N)。
 空间复杂度：O(1)。
  */
-public class 剑指Offer57II和为s的连续正数序列 {
+public class _57II_和为s的连续正数序列_序列内数字从小到大排列 {
     public int[][] findContinuousSequence(int target) {
         List<int[]> vec = new ArrayList<int[]>();
         for (int l = 1, r = 2; l < r;) {

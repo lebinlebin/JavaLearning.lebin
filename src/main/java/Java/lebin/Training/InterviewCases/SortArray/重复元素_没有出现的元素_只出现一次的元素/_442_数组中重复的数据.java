@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.SortArray.重复元素_没有出现的元素_只出现一次的元素;
 
 import java.util.ArrayList;
 import java.util.List;

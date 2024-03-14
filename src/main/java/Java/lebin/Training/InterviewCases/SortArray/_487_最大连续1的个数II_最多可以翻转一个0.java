@@ -17,7 +17,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
 只要窗口里面的 0 个数大于 1，那么就一直向右缩小 left 左边界。
 每次扩充 right 边界时候，就需要检查更新窗口宽度，这样能够保证及时更新 ans 返回值。
  */
-public class _487_最大连续1的个数II {
+public class _487_最大连续1的个数II_最多可以翻转一个0 {
     public int findMaxConsecutiveOnes(int[] nums) {
         int n = nums.length;
         // 窗口的两个边界，以及 cnt 用来记录出现 0 的个数

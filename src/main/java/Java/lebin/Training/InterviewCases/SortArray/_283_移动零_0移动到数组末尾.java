@@ -8,7 +8,7 @@ package Java.lebin.Training.InterviewCases.SortArray;
  */
 //时间复杂度：O(n)，其中 n 为序列长度。每个位置至多被遍历两次。
 //空间复杂度：O(1)。只需要常数的空间存放若干变量。
-public class _283_移动零 {
+public class _283_移动零_0移动到数组末尾 {
     public void moveZeroes(int[] nums) {
         int n = nums.length, zeroIndex = 0, noneZeroIndex = 0;
         while (noneZeroIndex < n) {//找到第一个为0的index
