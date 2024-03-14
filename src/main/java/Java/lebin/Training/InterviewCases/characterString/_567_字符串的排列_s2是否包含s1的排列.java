@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 //时间复杂度：O(n+m+∣Σ∣)，其中 n 是字符串 s1 的长度，m 是字符串 s2 的长度，Σ 是字符集，这道题中的字符集是小写字母，∣Σ∣=26。
 //空间复杂度：O(∣Σ∣)。
-public class _567_字符串的排列 {
+public class _567_字符串的排列_s2是否包含s1的排列 {
 	public boolean checkInclusion(String s1, String s2) {
 			int groudtruthLen = s1.length(), baseStrLen = s2.length();
 			if (groudtruthLen > baseStrLen) {

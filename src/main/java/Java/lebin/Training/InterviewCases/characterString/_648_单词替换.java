@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Set;
 
 /*
-648. 单词替换
 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。
 例如，词根an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。
 现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。
@@ -36,7 +35,7 @@ public class _648_单词替换 {
             String word = words[i];
             for (int j = 0; j < word.length(); j++) {
                 if (dictionarySet.contains(word.substring(0, 1 + j))) {
-                    words[i] = word.substring(0, 1 + j);
+                    words[i] = word.substring(0, 1 + j);//包含在内就替换
                     break;
                 }
             }

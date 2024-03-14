@@ -8,7 +8,7 @@ package Java.lebin.Training.InterviewCases.characterString;
  */
 //时间复杂度：O(n)，其中 n 是字符串 s 的长度。
 // 空间复杂度：O(n)。
-public class _459_重复的子字符串 {
+public class _459_重复的子字符串_是否由字符串的子串重复多次构成 {
     public boolean repeatedSubstringPattern(String s) {
         if (s.equals("")) return false;
         int len = s.length();

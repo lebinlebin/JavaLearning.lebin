@@ -26,7 +26,7 @@ package Java.lebin.Training.InterviewCases.characterString;
         如果 s[i−dp[i−1]−1]=‘(’，那么  dp[i]=dp[i−1]+dp[i−dp[i−1]−2]+2
 
  */
-public class _32_最长有效括号 {
+public class _32_最长有效括号_由括号组成的字符串找出最长有效括号 {
     public int longestValidParentheses(String s) {
         int maxans = 0;
         int[] dp = new int[s.length()];

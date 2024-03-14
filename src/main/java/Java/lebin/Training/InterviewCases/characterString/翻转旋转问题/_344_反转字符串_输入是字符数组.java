@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.characterString;
+package Java.lebin.Training.InterviewCases.characterString.翻转旋转问题;
 
 /**
  编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。
@@ -13,7 +13,7 @@ package Java.lebin.Training.InterviewCases.characterString;
  输入：s = ["H","a","n","n","a","h"]
  输出：["h","a","n","n","a","H"]
  */
-public class _344_反转字符串 {
+public class _344_反转字符串_输入是字符数组 {
 //	时间复杂度: O(n)
 //	空间复杂度: O(1)
 	public void reverseString(char[] s) {

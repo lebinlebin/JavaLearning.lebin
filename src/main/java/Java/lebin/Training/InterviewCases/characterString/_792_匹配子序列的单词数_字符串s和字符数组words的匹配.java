@@ -26,7 +26,7 @@ c: ["cd", "ce"]
 b: ["bb"]
 遍历完 s 后，我们就得到了答案。
  */
-public class _792_匹配子序列的单词数 {
+public class _792_匹配子序列的单词数_字符串s和字符数组words的匹配 {
     //时间复杂度 O(n+∑i=0,m−1  ∣wi∣)
     //空间复杂度 O(m)。其中 n 和 m 分别为 s 和 words 的长度，而 ∣wi∣ 为 words[i]的长度。
     public int numMatchingSubseq(String s, String[] words) {

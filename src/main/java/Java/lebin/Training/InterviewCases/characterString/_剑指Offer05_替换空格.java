@@ -1,7 +1,9 @@
 package Java.lebin.Training.InterviewCases.characterString;
-
+/*
+请实现一个函数，把字符串s中的每个空格替换成"%20"。
+ */
 public class _剑指Offer05_替换空格 {
-    //方式二：双指针法
+//    双指针法
 //    时间复杂度：O(n)
 //    空间复杂度：O(1)
     public String replaceSpace(String s) {

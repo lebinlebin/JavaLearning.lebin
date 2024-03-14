@@ -26,8 +26,8 @@ import java.util.ArrayDeque;
  */
 //时间复杂度：O(N)
 //空间复杂度：O(∣Σ∣) 其中 Σ 为字符集合
-public class _316_去除重复字母 {
-    public String removeDuplicateLetters(String s) {
+public class _316_去除重复字母_字典序最小_单调栈 {
+    public static String removeDuplicateLetters(String s) {
         int len = s.length();
         char[] charArray = s.toCharArray();
         int[] lastIndex = new int[26];
@@ -54,5 +54,10 @@ public class _316_去除重复字母 {
             sb.append(c);
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String str = "bcabc";
+        System.out.println(removeDuplicateLetters(str));
     }
 }

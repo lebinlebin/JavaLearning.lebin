@@ -32,6 +32,7 @@ public class _242_有效的字母异位词 {
 		return true;                        // record数组所有元素都为零0，说明字符串s和t是字母异位词
 	}
 
+
 	//方法一
 	//把两个字符串都转换成字符数组以后，进行排序，然后逐位进行比较。
 	public boolean isAnagram2(String s, String t) {

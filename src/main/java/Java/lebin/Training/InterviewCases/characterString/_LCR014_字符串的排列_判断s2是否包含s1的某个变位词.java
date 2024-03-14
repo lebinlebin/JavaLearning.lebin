@@ -15,7 +15,7 @@ LCR 014. 字符串的排列
 输出: False
  */
 //滑动窗口
-public class _LCR014_字符串的排列 {
+public class _LCR014_字符串的排列_判断s2是否包含s1的某个变位词 {
     public static boolean checkInclusion(String s1, String s2) {
         int n = s1.length(), m = s2.length();
         if (n > m) {
@@ -23,16 +23,19 @@ public class _LCR014_字符串的排列 {
         }
         int[] cnt1 = new int[26];
         int[] cnt2 = new int[26];
+        //[0-n)
         for (int i = 0; i < n; ++i) {
             ++cnt1[s1.charAt(i) - 'a'];
             ++cnt2[s2.charAt(i) - 'a'];
         }
+        //s2和s1相等
         if (Arrays.equals(cnt1, cnt2)) {
             return true;
         }
+        //[n,m]
         for (int i = n; i < m; ++i) {
             ++cnt2[s2.charAt(i) - 'a'];
-            --cnt2[s2.charAt(i - n) - 'a'];
+            --cnt2[s2.charAt(i - n) - 'a'];//滑动窗口，保持窗口大小为n
             if (Arrays.equals(cnt1, cnt2)) {
                 return true;
             }

@@ -5,7 +5,6 @@ import java.util.*;
 /*
 692. 前K个高频单词
 给一非空的单词列表，返回前 k 个出现次数最多的单词。
-
 返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
 
 示例 1：
@@ -23,6 +22,42 @@ import java.util.*;
     出现次数依次为 4, 3, 2 和 1 次。
      */
 public class _692_前K个高频单词_前K个高频元素_字母序返回 {
+    //统计频率的时间复杂度为N,小根堆循环的复杂度也为N，入队的时间复杂度为logK,所以最终的时间复杂度为NlogK
+    public List<String> topKFrequent(String[] words, int k) {
+        //top k算法
+        //1.先统计频率
+        //2.topK算法
+        Map<String,Integer> map = new HashMap<>();
+        List<String> ans = new ArrayList<>();
+        for(String word:words){
+            map.put(word,map.getOrDefault(word,0)+1);
+        }
+
+        PriorityQueue<String> queue = new PriorityQueue<>((s1,s2)->{
+            if (map.get(s1).equals(map.get(s2))) {
+                return s2.compareTo(s1);
+            } else {
+                return map.get(s1) - map.get(s2);
+            }
+        });
+
+        for(String str:map.keySet()){
+            queue.offer(str);
+            if(queue.size()>k){
+                queue.poll();
+            }
+        }
+        //循环出队
+        while(!queue.isEmpty()){
+            ans.add(queue.poll());
+        }
+        //需要反转队列，符合题目要求
+        Collections.reverse(ans);
+        return ans;
+    }
+
+    //------------------------------------------------------------------------
+
     //内部类
     static class MyComparator implements Comparator<String>{
         private Map<String,Integer> map;
@@ -45,7 +80,7 @@ public class _692_前K个高频单词_前K个高频元素_字母序返回 {
 
 
 
-    public static List<String> topKFrequent(String[] words, int k) {
+    public static List<String> topKFrequent2(String[] words, int k) {
         //1.先统计每个单词出现的个数
         Map<String,Integer> map = new HashMap<>();
         for (String s : words){
@@ -69,7 +104,7 @@ public class _692_前K个高频单词_前K个高频元素_字母序返回 {
 //        int[] nums = new int[]{-1,-2,2,-2,2,-2,3,3,-3};
 //        System.out.println(topKFrequent2(nums,2));
         String[] words = new String[]{"a","a","a","a","c","c","c","b","b","b","d","d","d"};
-        System.out.println(topKFrequent(words,3));
+        System.out.println(topKFrequent2(words,3));
 //        System.out.println('a'>'b');
     }
 }

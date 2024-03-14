@@ -19,7 +19,7 @@ import java.util.Set;
 输入: pattern = "aaaa", s = "dog cat cat dog"
 输出: false
  */
-public class _290_单词规律 {
+public class _290_单词规律dog_cat_cat_dog {
     public boolean wordPattern(String pattern, String str) {
         int patternLength = pattern.length();
         String[] strArray = str.split(" ");
@@ -36,7 +36,8 @@ public class _290_单词规律 {
                     return false;
                 }
             } else {
-                if (uniqueValue.contains(strArray[i])) {
+                //String pattern = "abba";String str = "dog dog dog dog";的时候，我们须要判断出结果是 false。
+                if (uniqueValue.contains(strArray[i])) {//一个key对应一个value，不能两个kay对应同一个value
                     return false;
                 }
                 uniqueValue.add(strArray[i]);
