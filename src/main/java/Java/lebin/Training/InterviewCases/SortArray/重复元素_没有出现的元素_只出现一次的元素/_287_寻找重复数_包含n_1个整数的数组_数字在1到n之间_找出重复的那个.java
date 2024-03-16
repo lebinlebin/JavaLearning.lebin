@@ -8,7 +8,7 @@ package Java.lebin.Training.InterviewCases.SortArray.重复元素_没有出现�
  * 输入：nums = [1,3,4,2,2]
  * 输出：2
  */
-public class _287_寻找重复数 {
+public class _287_寻找重复数_包含n_1个整数的数组_数字在1到n之间_找出重复的那个 {
     //思路: 二分查找，找到mid，[0~mid]的数的个数应该就等于mid位置的数，否则重复的数就在[0~mid]范围内；相反就在[mid+1,n]内
     //时间复杂度：O(nlogn)，其中 n 为 nums 数组的长度。二分查找最多需要二分 O(logn) 次，每次判断的时候需要O(n) 遍历 nums 数组求解小于等于 mid 的数的个数，
     // 因此总时间复杂度为 O(nlogn)。

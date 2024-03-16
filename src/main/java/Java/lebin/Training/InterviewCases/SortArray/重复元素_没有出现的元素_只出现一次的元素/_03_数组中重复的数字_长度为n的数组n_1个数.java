@@ -1,6 +1,7 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.SortArray.重复元素_没有出现的元素_只出现一次的元素;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  剑指 Offer 03. 数组中重复的数字找出数组中重复的数字。

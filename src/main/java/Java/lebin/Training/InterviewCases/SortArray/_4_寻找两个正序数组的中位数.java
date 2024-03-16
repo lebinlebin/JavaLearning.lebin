@@ -12,47 +12,6 @@ package Java.lebin.Training.InterviewCases.SortArray;
  * 输出：2.50000
  */
 public class _4_寻找两个正序数组的中位数 {
-/*
-思路: 不进行A数组和B数组的合并，而是直接遍历两个数组，每次拿到小的那个数，一直取到len/2个数，就是中位数，中间需要判定 A+B数组是奇数还是偶数。
-用 aStart 和 bStart 分别表示当前指向 A 数组和 B 数组的位置。
-如果 aStart 还没有到最后并且此时 A 位置的数字小于 B 位置的数字，那么就可以后移了。
-也就是 aStart＜alen && A[aStart]< B[bStart]。
-如果 B 数组此刻已经没有数字了，继续取数字 B[ bStart ]，则会越界，所以判断下 bStart 是否大于数组长度了，
-这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 aStart＜alen && (bStart >= blen || A[aStart] < B[bStart] ) 。
-*/
-
-//时间复杂度：O(m+n)。遍历 len/2+1 次，len=m+n
-//空间复杂度是 O(1）
-    public static double findMedianSortedArrays2(int[] A, int[] B) {
-        int alen = A.length;
-        int blen = B.length;
-        int totallen = alen + blen;
-        int left = -1;
-        int right = -1;
-        int aStart = 0;
-        int bStart = 0;
-
-        //  len/2  中间位置
-        for (int i = 0; i <= totallen / 2; i++) {
-            left = right;
-            //                      作为一个flag,当为true就不进行 ||后边的判断
-            if ( aStart < alen && (bStart >= blen || A[aStart] < B[bStart] ) ) {
-                right = A[aStart];//A数组小的值记录下来
-                aStart ++;
-            } else {
-                right = B[bStart];//B数组小的值记录下来
-                bStart ++ ;
-            }
-        }
-
-        if ((totallen & 1) == 0)//偶数的情况
-            return (left + right) / 2.0;
-        else
-            //奇数的情况
-            return right;
-    }
-   //--------------------------------------------------------------------------------------------------------------------------------
-
     /*
     解法一中，我们一次遍历就相当于去掉不可能是中位数的一个值，也就是一个一个排除。
     由于数列是有序的，其实可以一半儿一半儿的排除。假设要找第 k 小数，
@@ -126,6 +85,44 @@ public class _4_寻找两个正序数组的中位数 {
 
     }
 
+    /*
+思路: 不进行A数组和B数组的合并，而是直接遍历两个数组，每次拿到小的那个数，一直取到len/2个数，就是中位数，中间需要判定 A+B数组是奇数还是偶数。
+用 aStart 和 bStart 分别表示当前指向 A 数组和 B 数组的位置。
+如果 aStart 还没有到最后并且此时 A 位置的数字小于 B 位置的数字，那么就可以后移了。
+也就是 aStart＜alen && A[aStart]< B[bStart]。
+如果 B 数组此刻已经没有数字了，继续取数字 B[ bStart ]，则会越界，所以判断下 bStart 是否大于数组长度了，
+这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 aStart＜alen && (bStart >= blen || A[aStart] < B[bStart] ) 。
+*/
+    //时间复杂度：O(m+n)。遍历 len/2+1 次，len=m+n
+    //空间复杂度是 O(1）
+    public static double findMedianSortedArrays2(int[] A, int[] B) {
+        int alen = A.length;
+        int blen = B.length;
+        int totallen = alen + blen;
+        int left = -1;
+        int right = -1;
+        int aStart = 0;
+        int bStart = 0;
+
+        //  len/2  中间位置
+        for (int i = 0; i <= totallen / 2; i++) {
+            left = right;
+            //                      作为一个flag,当为true就不进行 ||后边的判断
+            if ( aStart < alen && (bStart >= blen || A[aStart] < B[bStart] ) ) {
+                right = A[aStart];//A数组小的值记录下来
+                aStart ++;
+            } else {
+                right = B[bStart];//B数组小的值记录下来
+                bStart ++ ;
+            }
+        }
+
+        if ((totallen & 1) == 0)//偶数的情况
+            return (left + right) / 2.0;
+        else
+            //奇数的情况
+            return right;
+    }
     public static void main(String[] args) {
         //nums1 = [1,3], nums2 = [2]
         int[] nums1 = new int[]{1,3};
