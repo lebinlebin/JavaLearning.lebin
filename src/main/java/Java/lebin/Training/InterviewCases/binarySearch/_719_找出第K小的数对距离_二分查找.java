@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 /*
 数对 (a,b) 由整数 a 和 b 组成，其数对距离定义为 a 和 b 的绝对差值。
-给你一个整数数组 nums 和一个整数 k ，数对由 nums[i] 和 nums[j] 组成且满足 0 <= i < j < nums.length 。返回 所有数对距离中 第 k 小的数对距离。
+给你一个整数数组 nums 和一个整数 k ，数对由 nums[i] 和 nums[j] 组成且满足 0 <= i < j < nums.length 。
+返回 所有数对距离中 第 k 小的数对距离。
 
 示例 1：
 输入：nums = [1,3,1], k = 1
@@ -21,7 +22,7 @@ import java.util.Arrays;
 输入：nums = [1,6,1], k = 3
 输出：5
  */
-public class _719_找出第K小的数对距离 {
+public class _719_找出第K小的数对距离_二分查找 {
     public int smallestDistancePair(int[] nums, int k) {
         Arrays.sort(nums);
         int len = nums.length;
@@ -29,6 +30,7 @@ public class _719_找出第K小的数对距离 {
         int right = nums[len - 1] - nums[0];
         while (left < right) {
             int mid = (left + right) / 2;
+            //统计距离（数值之差）小于等于 target 的个数
             int count = countLessEquals(nums, mid);
             if (count < k) {
                 // 如果小于等于 mid 的个数严格小于 k 个，说明 mid 太小了
@@ -44,10 +46,6 @@ public class _719_找出第K小的数对距离 {
 
     /**
      * 统计距离（数值之差）小于等于 target 的个数
-     *
-     * @param nums
-     * @param target
-     * @return
      */
 
     private int countLessEquals(int[] nums, int target) {

@@ -6,7 +6,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  */
 //时间复杂度：O(logn)，其中 n 是数组的长度。
 //空间复杂度：O(1)。
-public class _704_二分查找_寻找左右边界 {
+public class _704_二分查找_以及寻找左右边界 {
 	public int search(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1; // 注意

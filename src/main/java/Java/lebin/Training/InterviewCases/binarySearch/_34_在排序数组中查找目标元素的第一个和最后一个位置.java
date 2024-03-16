@@ -52,6 +52,10 @@ public class _34_在排序数组中查找目标元素的第一个和最后一个
 	}
 
 
+
+
+
+
 	public static int[] searchRange2(int[] nums, int target) {
 		//找第一个大于等于target的下标
 		int leftIdx = left_bound(nums, target);

@@ -10,6 +10,8 @@ package Java.lebin.Training.InterviewCases.sort;
 输出: 3
  */
 public class _493_翻转对2 {
+    //时间复杂度：O(NlogN)，其中 N 为数组的长度。
+    //空间复杂度：O(N)，其中 N 为数组的长度。
     public int reversePairs(int[] nums) {
         int len = nums.length;
         if (len < 2) {

@@ -17,7 +17,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 //时间复杂度：O(logn)，其中 n 为数组的长度。二分查找所需的时间复杂度为 O(logn)。
 //空间复杂度：O(1)。我们只需要常数空间存放若干变量。
 
-public class _35_搜索插入位置 {
+public class _35_排序数组搜索插入位置_存在返回索引_不存在返回插入的位置 {
     public int searchInsert(int[] nums, int target) {
         int n = nums.length;
         int left = 0, right = n - 1, ans = n;
