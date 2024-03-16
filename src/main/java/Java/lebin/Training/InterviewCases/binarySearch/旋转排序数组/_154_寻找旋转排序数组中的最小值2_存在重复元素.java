@@ -25,7 +25,7 @@ package Java.lebin.Training.InterviewCases.binarySearch.旋转排序数组;
 注意：这里的说是「中间数」，即 位于中间的那个数，不是数学意义上的中位数。
 可以分为以下两种情况：中间数与左边界比较、中间数与右边界比较
  */
-public class _154_寻找旋转排序数组中的最小值2 {
+public class _154_寻找旋转排序数组中的最小值2_存在重复元素 {
     public int findMin1(int[] nums) {
         int len = nums.length;
         if (len == 0) {

@@ -26,7 +26,7 @@ package Java.lebin.Training.InterviewCases.binarySearch.旋转排序数组;
  */
 //时间复杂度：O(logN)，这里 N 是数组的长度，在循环中一次排除一半，因此时间复杂度是对数级别的；
 //空间复杂度：O(1)，使用到的临时变量的个数是常数。
-public class _81_搜索旋转排序数组2_搜索某具体值 {
+public class _81_搜索旋转排序数组2_搜索某具体值_有重复元素 {
     // 中间的数与左边界比较
 //    情况 1：二分查找算法看到的中间元素 nums[mid] 的值和左边界 nums[left] 的值比较
     public boolean search(int[] nums, int target) {

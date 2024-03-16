@@ -37,7 +37,8 @@ public class 轮转后的有序数组中第K小的数 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{3,4,5,1,2,3};
-        System.out.println(findKthElement(nums,nums.length-1,4));
+//        System.out.println(findKthElement(nums,nums.length-1,4));
+        System.out.println(nums[findKthElement(nums,nums.length-1,4)]);
 
     }
 

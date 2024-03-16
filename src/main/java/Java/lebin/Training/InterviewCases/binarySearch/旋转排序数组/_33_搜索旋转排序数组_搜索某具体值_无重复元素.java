@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.binarySearch;
+package Java.lebin.Training.InterviewCases.binarySearch.旋转排序数组;
 
 /**
  * 33. 搜索旋转排序数组的具体值
@@ -13,7 +13,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
 //时间复杂度:O(logn),其中 n 为nums 数组的大小。
 // 空间复杂度: O(1) ,我们只需要常数级别的空间存放变量。
 //字节一面 todo:数组中的值互不相同
-public class _33_搜索旋转排序数组_搜索某具体值 {
+public class _33_搜索旋转排序数组_搜索某具体值_无重复元素 {
 	public int search(int[] nums, int target) {
 		int n = nums.length;
 		if (n == 0) { return -1; }
