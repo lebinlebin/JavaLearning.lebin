@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.binarySearch;
+package Java.lebin.Training.InterviewCases.各种k个数;
 
 /**
  * 4. 寻找两个正序数组的中位数
@@ -11,7 +11,7 @@ package Java.lebin.Training.InterviewCases.binarySearch;
  * 输入：nums1 = [1,2], nums2 = [3,4]
  * 输出：2.50000
  */
-public class _4_寻找两个正序数组的中位数 {
+public class _4_寻找两个正序数组的中位数_两个升序数组第k小的数 {
     /*
     解法一中，我们一次遍历就相当于去掉不可能是中位数的一个值，也就是一个一个排除。
     由于数列是有序的，其实可以一半儿一半儿的排除。假设要找第 k 小数，

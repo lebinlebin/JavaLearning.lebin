@@ -12,7 +12,7 @@ import java.util.Random;
  输入：arr = [3,2,1], k = 2
  输出：[1,2] 或者 [2,1]
  */
-public class _40_最小的k个数 {
+public class _40_整数数组_最小的k个数_快排 {
     /*
     快排
     思路和算法

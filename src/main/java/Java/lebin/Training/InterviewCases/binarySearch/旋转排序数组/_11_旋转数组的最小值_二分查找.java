@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.binarySearch;
+package Java.lebin.Training.InterviewCases.binarySearch.旋转排序数组;
 
 /**
  * 剑指 Offer 11. 旋转数组的最小数字
