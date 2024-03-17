@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.characterString;
+package Java.lebin.Training.InterviewCases.characterString.重复串问题;
 /*
 给你一个字符串 s 和一个整数 k 。你可以选择字符串中的任一字符，并将其更改为任何其他大写英文字符。该操作最多可执行 k 次。
 在执行上述操作后，返回 包含相同字母的最长子字符串的长度。
@@ -18,7 +18,7 @@ package Java.lebin.Training.InterviewCases.characterString;
 //滑动窗口
 //时间复杂度：O(N)，这里 N 是输入字符串 S 的长度；
 //空间复杂度：O(A)，这里 A 是输入字符串 S 出现的字符 ASCII 值的范围
-public class _424_替换后的最长重复字符_滑动窗口 {
+public class _424_s中任选k个字符进行替换后的最长重复字符_滑动窗口 {
     public int characterReplacement(String s, int k) {
         int len = s.length();
         if (len < 2) {
