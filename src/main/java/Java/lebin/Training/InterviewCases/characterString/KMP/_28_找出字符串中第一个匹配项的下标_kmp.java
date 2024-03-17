@@ -34,25 +34,24 @@ public class _28_找出字符串中第一个匹配项的下标_kmp {
 		int j = 0;
 		for (int i = 0; i < haystack.length(); i++) {
 			while (j > 0 && needle.charAt(j) != haystack.charAt(i)) {
-				j = next[j - 1];
+				j = next[j - 1];//遇到不等的情况，从next的j-1获得跳过的位置
 			}
-
 			if (needle.charAt(j) == haystack.charAt(i)){
 				j++;
 			}
 			if (j == needle.length())
-				return i - needle.length() + 1;
+				return i - needle.length() + 1;//返回起始匹配到的位置
 		}
 		return -1;
 
 	}
-
+	//最长相等前后缀的计算
 	private void getNext(int[] next, String s) {
 		int j = 0;
 		next[0] = 0;
 		for (int i = 1; i < s.length(); i++) {
-			while (j > 0 && s.charAt(j) != s.charAt(i))
-				j = next[j - 1];
+			while (j > 0 && s.charAt(j) != s.charAt(i))//需要一直回跳
+				j = next[j - 1];//取前边一位作为下标
 			if (s.charAt(j) == s.charAt(i))
 				j++;
 			next[i] = j;
