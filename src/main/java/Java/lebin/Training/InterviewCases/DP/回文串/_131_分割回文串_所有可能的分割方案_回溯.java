@@ -15,7 +15,7 @@ package Java.lebin.Training.InterviewCases.DP.回文串;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _131_分割回文串 {
+public class _131_分割回文串_所有可能的分割方案_回溯 {
 	List<List<String>> res = new LinkedList<>();
 	List<String>  track = new LinkedList<>();
 

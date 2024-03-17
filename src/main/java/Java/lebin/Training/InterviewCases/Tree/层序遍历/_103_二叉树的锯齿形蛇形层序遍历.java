@@ -21,7 +21,7 @@ import java.util.Queue;
  *   [15,7]
  * ]
  */
-public class _103_二叉树的锯齿形层序遍历 {
+public class _103_二叉树的锯齿形蛇形层序遍历 {
 //时间复杂度：每个点进队出队各一次，故渐进时间复杂度为 O(n)。
 //空间复杂度：队列中元素的个数不超过 n个，故渐进空间复杂度为 O(n)。
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
