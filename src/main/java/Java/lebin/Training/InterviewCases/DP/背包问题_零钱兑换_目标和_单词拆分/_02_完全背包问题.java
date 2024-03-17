@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 /*
 完全背包
 有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品都有无限个（也就是可以放入背包多次），求解将哪些物品装入背包里物品价值总和最大。

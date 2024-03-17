@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 
 import java.util.HashSet;
 import java.util.Set;

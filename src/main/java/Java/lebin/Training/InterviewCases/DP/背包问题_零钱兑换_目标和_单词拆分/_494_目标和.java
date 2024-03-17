@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 /*
 494.目标和
 给定一个非负整数数组，a1, a2, ..., an, 和一个目标数 S。

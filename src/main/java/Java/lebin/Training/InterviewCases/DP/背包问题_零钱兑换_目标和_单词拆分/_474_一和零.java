@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 /*
 474.一和零
 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。

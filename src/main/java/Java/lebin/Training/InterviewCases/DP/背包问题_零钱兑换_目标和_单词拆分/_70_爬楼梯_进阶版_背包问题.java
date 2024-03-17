@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 /*
 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬至多m (1 <= m < n)个台阶。你有多少种不同的方法可以爬到楼顶呢？

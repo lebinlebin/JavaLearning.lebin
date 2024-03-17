@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.DP.背包问题;
+package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标和_单词拆分;
 /*
 377. 组合总和 Ⅳ
 给定一个由正整数组成且不存在重复数字的数组，找出和为给定目标正整数的组合的个数。
