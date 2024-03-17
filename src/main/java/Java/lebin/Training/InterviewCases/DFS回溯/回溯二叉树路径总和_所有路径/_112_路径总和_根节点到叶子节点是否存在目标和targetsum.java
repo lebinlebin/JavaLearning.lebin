@@ -12,7 +12,7 @@ package Java.lebin.Training.InterviewCases.DFS回溯.回溯二叉树路径总和
 空间复杂度：O(H)，其中 H 是树的高度。空间复杂度主要取决于递归时栈空间的开销，最坏情况下，树呈现链状，空间复杂度为 O(N)。
 平均情况下树的高度与节点数的对数正相关，空间复杂度为 O(logN)。
  */
-public class _112_路径总和_是否存在目标和targetsum {
+public class _112_路径总和_根节点到叶子节点是否存在目标和targetsum {
     public boolean hasPathSum(TreeNode root, int targetsum){
         if(root == null) return false;
         return traversal(root,targetsum-root.val);
