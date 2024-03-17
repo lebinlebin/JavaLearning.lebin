@@ -44,7 +44,7 @@ public class _140_单词拆分II {
 
         // 第 2 步：回溯算法搜索所有符合条件的解
         List<String> res = new ArrayList<>();
-        if (dp[len]) {
+        if (dp[len]) {//首先一定能够用dict里面的单词进行组成
             Deque<String> path = new ArrayDeque<>();
             dfs(s, len, wordSet, dp, path, res);
             return res;
@@ -54,7 +54,6 @@ public class _140_单词拆分II {
 
     /**
      * s[0:len) 如果可以拆分成 wordSet 中的单词，把递归求解的结果加入 res 中
-     *
      * @param s
      * @param len     长度为 len 的 s 的前缀子串
      * @param wordSet 单词集合，已经加入哈希表
@@ -69,7 +68,7 @@ public class _140_单词拆分II {
         }
         // 可以拆分的左边界从 len - 1 依次枚举到 0
         for (int i = len - 1; i >= 0; i--) {
-            String suffix = s.substring(i, len);
+            String suffix = s.substring(i, len);//从后往前加
             if (wordSet.contains(suffix) && dp[i]) {
                 path.addFirst(suffix);
                 dfs(s, i, wordSet, dp, path, res);
