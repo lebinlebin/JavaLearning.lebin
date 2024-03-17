@@ -37,7 +37,7 @@ package Java.lebin.Training.InterviewCases.DP.背包问题_零钱兑换_目标�
 4. 遍历顺序
     对于01背包问题一维dp的遍历，nums放在外循环，target在内循环，且内循环倒序。
  */
-public class _494_目标和 {
+public class _494_目标和_用加好减号分为两部分使得加和为target {
     //时间复杂度：O(n × m)，n为正数个数，m为背包容量
     //空间复杂度：O(m)，m为背包容量
     public int findTargetSumWays1D(int[] nums, int target) {
@@ -52,6 +52,7 @@ public class _494_目标和 {
 
         int size = (target + sum) / 2;
         if(size < 0) size = -size;
+
         int[] dp = new int[size + 1];
         dp[0] = 1;
         for (int i = 0; i < nums.length; i++) {

@@ -6,7 +6,7 @@ package Java.lebin.Training.InterviewCases.DP.矩阵路径最优_机器人不同
  */
 //时间复杂度：O(mn)
 //空间复杂度：O(mn)
-public class _62_不同路径 {
+public class _62_不同路径_左上角到右下角多少不同的路径 {
     /**
      * 1. 确定dp数组下标含义 dp[i][j] 到每一个坐标可能的路径种类
      * 2. 递推公式 dp[i][j] = dp[i-1][j]+dp[i][j-1]
