@@ -67,7 +67,6 @@ public class _140_单词拆分II {
             res.add(String.join(" ",path));
             return;
         }
-
         // 可以拆分的左边界从 len - 1 依次枚举到 0
         for (int i = len - 1; i >= 0; i--) {
             String suffix = s.substring(i, len);
