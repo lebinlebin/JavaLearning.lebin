@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.SortArray.最大连续1的个数;
 /*
 给定一个二进制数组 nums 和一个整数 k，如果可以翻转最多 k 个 0 ，则返回 数组中连续 1 的最大个数 。
 示例 1：
@@ -20,7 +20,7 @@ left 被动右移：判断此时窗口内 0 的个数，如果超过了 K，则 
  */
 //时间复杂度：O(N)，因为每个元素只遍历了一次。
 //空间复杂度：O(1)，因为使用了常数个空间。
-public class _1004_最大连续1的个数III {
+public class _1004_最大连续1的个数III_最多翻转K个0 {
     public int longestOnes(int[] A, int K) {
         int N = A.length;
         int res = 0;

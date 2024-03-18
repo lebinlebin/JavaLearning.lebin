@@ -1,4 +1,4 @@
-package Java.lebin.Training.InterviewCases.SortArray;
+package Java.lebin.Training.InterviewCases.SortArray.最大连续1的个数;
 /*
 给定一个二进制数组 nums ， 计算其中最大连续 1 的个数。
 示例 1：
