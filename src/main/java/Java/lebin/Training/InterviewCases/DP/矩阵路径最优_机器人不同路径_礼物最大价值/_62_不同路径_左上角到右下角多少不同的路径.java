@@ -12,7 +12,7 @@ public class _62_不同路径_左上角到右下角多少不同的路径 {
      * 2. 递推公式 dp[i][j] = dp[i-1][j]+dp[i][j-1]
      * 3. 初始化 dp[i][0]=1 dp[0][i]=1 初始化横竖都可
      * 4. 遍历顺序 一行一行遍历
-     * 5. 推导结果 。。。。。。。。
+     * 5. 推导结果
      */
     public static int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
